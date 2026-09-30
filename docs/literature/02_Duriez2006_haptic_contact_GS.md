@@ -103,7 +103,7 @@
 - Q2（摩擦图滑动段的斜率）：本文是纯 Coulomb，没有斜坡 → 斜坡是 Duriez 2009 另加的，最可能是速度相关（粘性）项。还要看 Martin 论文里有没有进一步说明。
 
 ## 7. 待解决的问题
-- SOFA 的 `BlockGaussSeidelConstraintSolver` 和 `ProjectedGaussSeidelConstraintSolver` 与算法 1 有什么区别？（等读 SOFA 源码时确认）
+- ~~SOFA 的 `BlockGaussSeidelConstraintSolver` 和 `ProjectedGaussSeidelConstraintSolver` 与算法 1 有什么区别？~~（已回答：v25.12 只有 BlockGS 等 5 个求解器；BlockGS 按块调用 `ConstraintResolution::resolution()`，结构和算法 1 相同，具体的局部求解由约束类型决定，见 `docs/code/01`、`02`）
 - 针（梁）和组织（四面体）刚度相差几个数量级，Λ_i 用特征值平均来近似，在这种情况下是否还合理？
 
 ---

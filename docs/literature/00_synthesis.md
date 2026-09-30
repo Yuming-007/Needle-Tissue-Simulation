@@ -32,7 +32,7 @@ Delassus W, 分块 GS          约束, 不重划网格                          
 | Chentanez 2009 | 可反转 FEM（Irving） | 离散弹性杆 + CORDE | **局部重划网格**，针尖 f_cut（按区域） | 粘滑 LCP，f_perlen × 长度，另加粘性项 | CG + 摩擦状态猜测 | 25 fps（8 核） | 否 |
 | DiMaio 2003 | 2D 线弹静力（缩聚） | 刚性 | 横向位移约束，轴向粘滑 | 按标定的力密度 | 低秩更新 | 500 Hz（2D） | 否 |
 | Wang 2025 | 2D，接触点 + Ogden（推测） | 线性梁（2D） | 斜面"预压缩弹簧" | — | — | 200 Hz 以上（2D） | 否 |
-| **CollisionAlgorithm**（InfinyTech3D） | 共旋四面体 | BeamFEM（Rigid3） | 约束，`punctureForceThreshold` | `frictionCoeff`（形式待查） | BlockGS | ? | **开源（v25.12 有 tag）** |
+| **CollisionAlgorithm**（InfinyTech3D） | 共旋四面体 | BeamFEM（Rigid3） | 约束，`punctureForceThreshold` | `frictionCoeff`：**实际是 GS 轴向欠松弛因子**（收敛即完全粘住，见 `docs/code/01` 问题 1） | BlockGS | 官方场景约 9 ms/步（216 节点） | **开源（v25.12 有 tag）** |
 
 ## 3. 互相印证的结论（可信度高）
 
@@ -148,7 +148,7 @@ Duriez 2009 (01) ──► Adagolodjo 2016/2019 (14)  ──► Baksic 2020 (18)
 
 | 之前的判断 | 补充阅读后 |
 |---|---|
-| CollisionAlgorithm 的 `frictionCoeff` 形式未知 | Adagolodjo 2019 的 μ_n ∈ [0, 1]（1 = 粘着），和 Martin 的 η 是同一种东西 → CollisionAlgorithm **很可能也是 η 型**（占粘着力的比例），**没有物理量纲**。还要读代码确认 |
+| CollisionAlgorithm 的 `frictionCoeff` 形式未知 | Adagolodjo 2019 的 μ_n ∈ [0, 1]（1 = 粘着），和 Martin 的 η 是同一种东西 → CollisionAlgorithm **很可能也是 η 型**（占粘着力的比例），**没有物理量纲**。还要读代码确认 → **（2026-09-30 已由代码和实验回答）比 η 型更糟：它只是 GS 的欠松弛因子，η_eff ≈ 迭代次数 × frictionCoeff，见 `docs/code/01` 问题 1** |
 | "rupture"可能有两种含义 | **至少三种**：①穿刺时刺破表面或界面（f_p）；②沿针轴持续切割（f_c）；③针横向运动造成撕裂（Perrusi 2021）。都能在不改拓扑的前提下实现 |
 | 最终目标"规划 + 控制"没有 SOFA 先例 | **控制部分有完整的先例**（T-RO 2019 到 ICRA 2026）；**规划部分在 SOFA 里没有先例**（Wang 2025 用的是 2D 自研仿真器） |
 | 速度的主要手段不清楚 | ① 粗网格已经够控制用（几百到几千个节点）；② **瓶颈是 W 的计算（占 70–80%）**；③ 在一步之内用约束空间做扰动（W 只算一次）；④ 分区降阶（开源）；⑤ 用神经网络学习仿真数据 |
@@ -183,3 +183,15 @@ Duriez 2009 (01) ──► Adagolodjo 2016/2019 (14)  ──► Baksic 2020 (18)
   4. **Adagolodjo 2019 的 μ_n 原文叫"penetration resistance coefficient"**（0 = 无摩擦，1 = 粘着）→ 进一步证实这一派的摩擦参数是"占粘着力的比例"。
   5. **W 的写法至少有三种约定**：Duriez 2006（未知量是位移）、Martin 第 3、4 章（动力学格式，W 带 h²）、Martin 第 5、6 章和 Adagolodjo（准静态格式，W 不带 h²）。**比较不同论文里 W 的数值或 η 的取值之前，要先统一约定**（待方法手册统一）。
   6. van Gerwen 的表 3 必须区分仿体（Art）和生物组织（Bio），原笔记把两者混在了一起（已改正）。
+
+
+---
+## 15. 资源学习阶段的结论回填（2026-09-30）
+§5.1 的核对清单和 §13 的技术核对，已经由代码阅读和实验回答（详见 `docs/code/01–04`）：
+- [x] 约束点生成：**固定间距**（`tipDistThreshold`），沿针身方向；不是网格相交法。
+- [x] 双边约束方向：**按针的边**（`FirstDirection` + `EdgeNormalHandler`），沿针身分段为常数。
+- [x] 摩擦形式：**不是**物理摩擦律，而是 GS 轴向欠松弛（问题 1）。
+- [x] 切割力：**没有**。
+- [x] 多个组织体 / 多区域：一个算法实例对应一个表面和一个体网格；体网格内可以逐单元设材料（SOFA 原生）；层间界面不触发刺穿。
+- [x] ModelOrderReduction 里的分区降阶：**公开仓库里没有**。
+- 另外新增的关键事实：SOFA 的 λ 是冲量（一阶 / 二阶积分器混用会导致作用力 ≠ 反作用力）；约束间距 ≪ 单元尺寸时 GS 永不收敛；刺穿深度强烈依赖网格；官方求解配置的耗时约按节点数的 2 次方以上增长；进程分叉快照可以用于规划采样。

@@ -167,7 +167,7 @@ $$\begin{pmatrix}\mathbf W_b&\mathbf W_c\\\mathbf W_c^T&\mathbf W_f\end{pmatrix}
 - 再用截断 SVD 求解：去掉小奇异值 ↔ 去掉病态方向（相邻约束几乎共线时产生的方向），相当于正则化。
 - 局限：摩擦状态估计错了就得不到真正的解；只适用于 η 型摩擦（粘滑 + η）。
 
-### 6.4 W 的计算方式（性能的关键）〔原文，SOFA 组件名待核实〕
+### 6.4 W 的计算方式（性能的关键）〔原文；SOFA 组件已核实，见 `docs/code/02` B3〕
 | 方式 | 适用条件 | SOFA 组件（待核实） |
 |---|---|---|
 | 直接分解 A、对 Hᵀ 的每一列回代 | 通用；网格小 | `LinearSolverConstraintCorrection` + 直接求解器 |
@@ -206,7 +206,8 @@ $$\begin{pmatrix}\mathbf W_b&\mathbf W_c\\\mathbf W_c^T&\mathbf W_f\end{pmatrix}
 
 - **刚性针**：用 E 很大的梁（CollisionAlgorithm 例子用 E = 1e12；Perrusi 的刚性针 E = 100–200 GPa，半径 8 mm），比纯刚体更良态（§1.3）。
 - **离散化**：15 cm 针用约 50 个单元（Duriez 2009、Wang 2025）；12 cm 针用 28 个单元时收敛（Adagolodjo 2019）；13–16 个单元也常用（Baksic、Ha、Perrusi）。
-- 钢针 E = 200 GPa（大多数论文）；Wang 2024 调参时用 80 GPa。
+- 钢针 E = 200 GPa（大多数论文）；Wang 2024 调参用 80 GPa；Baksic 2022 用挂重法标定活检针得到 77.94 GPa。〔推导〕这是因为**空心针按实心截面建模**：E_eff = E(1 − (rᵢ/rₒ)⁴)，反推 rᵢ/rₒ ≈ 0.88。→ SOFA 的 `BeamFEMForceField` 有 `radiusInner`，可以直接按真实截面建模；否则用约 80 GPa 的等效模量。
+- **SOFA v25.12 的 `BeamFEMForceField` 实际上是 Euler-Bernoulli 梁**（有效剪切面积设为 0，见 `docs/code/02` B6）。
 
 ## 9. 斜面针尖：三种写法其实是同一件事〔推导〕
 | 论文 | 写法 |
@@ -227,3 +228,27 @@ $$\begin{pmatrix}\mathbf W_b&\mathbf W_c\\\mathbf W_c^T&\mathbf W_f\end{pmatrix}
 - 输入：针根位姿（插入、横移、旋转）；输出：针尖位姿、针的形状、针根的力、各层应变能、到关键结构的 SDF 距离。
 - 敏感度：用 §7 的方法（单步），或者用有限差分（多步）。
 - 速度：单步耗时 × 每次决策的前向仿真次数（CE：N 个样本 × 时域步数）必须满足控制频率。
+
+---
+
+## 12. 理论和 SOFA v25.12 实现的逐项对照（2026-09-30，依据 `docs/code/01–03`）
+
+| handbook 里的概念 | SOFA / 插件里的实际实现 | 注意事项 |
+|---|---|---|
+| §1 W = Σ H (K^eff)⁻¹ Hᵀ（柔度，m/N），λ 是力 | W = J A⁻¹ Jᵀ × dt（二阶 EulerImplicit，A = M + h(h+rs)K + …）→ **λ 是冲量（N·s）**，力 = λ/dt〔代码 + 运行 + Baksic 2022 p.39〕 | 只是约定不同（λ_SOFA = h·λ_handbook，W_SOFA = W_handbook / h）；**一阶积分器会把同一个 λ 当作力** → 针和组织的积分器必须一致 |
+| §1.4 一步五个环节 | `FreeMotionAnimationLoop::step`：`AnimateBeginEvent`（CollisionLoop 检测）→ 自由运动 → `processGeometricalData`（重建约束）→ 组装 W、GS → 修正 | 检测用步首位置，穿刺判定读上一步的 λ |
+| §2 GS 局部求解 | `BlockGaussSeidelConstraintSolver` 按块调用 `ConstraintResolution::resolution()`；**每步从 λ = 0 开始**；停止判据 Σ‖W_block Δλ‖ < tol × 约束数（默认） | 默认容差很松，会掩盖过约束和数值摩擦 |
+| §2 穿刺三状态律 | **事后检测**：上一步针尖约束冲量各分量范数之和 / dt > 阈值 → 切换状态；阈值没有进入约束律 | 用的是合力（含切向），不是法向力；滞后一步 |
+| §2 切割约束 f_c | **没有实现** | 要自己加 |
+| §2 针身摩擦 (a)/(b)/(c) | `InsertionResolution`：frictionCoeff 是**轴向欠松弛因子** → 收敛时完全粘住，实际是 η_eff ≈ k·μ 的 η 型 | 要换成 (a) 或 §4 的统一摩擦律 |
+| §3 η 型摩擦依赖 h 和 W | 问题 1 的实验：同样的 frictionCoeff，阻力随 tol、maxIt 相差约 40 倍 | 比 §3 预测的还不稳定（η 还依赖迭代次数） |
+| §4 1D 针没有径向预压力 | 插件的横向约束只把组织点拉回针轴，没有预压力项 | 和 §4 的分析一致 |
+| §5.3 多层方案 B | SOFA 线弹性四面体力场的 `youngModulus` 可以逐单元设置；插件只检测一个外表面 | 界面穿刺（方案 C）要自己加 |
+| §6.1 约束间距 ≥ 单元尺寸 | 实验：50 mm 单元、3 mm 间距时 GS 每步都达不到收敛（5001 次迭代）；25 mm 时约 15 次 | 验证了 |
+| §6.2 混合求解器 | v25.12 的 5 个求解器里都没有 | 要在 `ConstraintResolution` 层面或新求解器里实现 |
+| §6.4 W 的计算方式 | `LinearSolver` / `Precomputed`（稠密 N×N，EulerImplicit，dt 固定）/ `Uncoupled` / `Generic` | 官方场景里组装 W 占每步 58% |
+| §7 约束空间 Jacobian | 需要保存和恢复状态 → **进程分叉快照可行**（插件内部状态一起复制） | 单步内还可以用 `solver.W()` 读 W |
+| §8 Timoshenko 梁 | `BeamFEMForceField` 实际上是 **Euler-Bernoulli**（有效剪切面积 = 0）；支持空心截面 | 细长针可以忽略差别 |
+| §9 斜面针尖 | 插件没有 | 在新建约束点时加横向偏移（要改 `InsertionAlgorithm`） |
+| §10 逐单元材料 | 原生支持（线弹性）；超弹只能全局一组参数；Ogden 的 μ₁(SOFA) = 2μ(Wang) | |
+| §11 应变能输出 | 共旋四面体力场的 `getPotentialEnergy()` **返回 0**（只有 `small` 方法实现了） | 要自己算 |

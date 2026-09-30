@@ -22,6 +22,6 @@
 ## C. 要读代码或做实验才能回答（留到定下起点之后）
 | 问题 | 怎么回答 |
 |---|---|
-| CollisionAlgorithm 是固定间距还是网格相交；双边约束方向按边还是按轨迹；摩擦用哪种形式；有没有切割力；能不能处理多个组织体（01-Q1、03-Q1、04-Q1、05-Q1） | 读 `InsertionAlgorithm.cpp` 和 `ConstraintInsertion` 的代码 |
-| SOFA 的 `BlockGaussSeidel` 和 `ProjectedGaussSeidel` 各自对应什么（02-Q1）；有没有"双边约束直接求解"的选项（03-Q3） | 读 SOFA 源码 |
+| ~~CollisionAlgorithm 是固定间距还是网格相交；双边约束方向按边还是按轨迹；摩擦用哪种形式；有没有切割力；能不能处理多个组织体~~ | **已回答（2026-09-30，`docs/code/01`）**：固定间距（`tipDistThreshold`）；方向按针的边；摩擦是 GS 欠松弛的数值副产品（问题 1）；没有切割力；一个表面加一个体网格（体网格内可以分区设材料） |
+| ~~SOFA 的 `BlockGaussSeidel` 和 `ProjectedGaussSeidel` 各自对应什么（02-Q1）~~（已回答：v25.12 没有 ProjectedGaussSeidel；BlockGS 的实现见 `docs/code/02` B4）；有没有"双边约束直接求解"的选项（03-Q3）：v25.12 的 5 个求解器里都没有（BlockGS、UnbuiltGS、NNCG、ImprovedJacobi、LCP）→ 要自己在 `ConstraintResolution` 里实现 | 已回答 |
 | handbook §3 的 η 量级估计、§4 的"直线插入时 Coulomb 形式摩擦接近零"、§5.1 的"f_p/f_c 和力曲线的关系" | 用仿真验证 |

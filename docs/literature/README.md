@@ -29,4 +29,6 @@ PDF 原文位于 `~/Downloads/`，补充论文在 `~/Downloads/extra_papers/`（
 | 18 | [18_Baksic2020_moving_tissue_inverseFE.md](18_Baksic2020_moving_tissue_inverseFE.md) | Baksic et al., ICRA 2020 | 约束型目标函数，呼吸运动 |
 | 19 | [19_Ha2024_2026_isoconstraint_learning.md](19_Ha2024_2026_isoconstraint_learning.md) | Ha, Bert, Courtecuisse, IROS 2024 + ICRA 2026 | 孤立目标约束 + 神经网络代替逆向仿真 |
 
+| 20 | [20_Baksic2022_thesis.md](20_Baksic2022_thesis.md) | Baksic, 博士论文 2022 | SOFA 实现细节 + 针和仿体的参数标定方法 |
+
 未精读：`B4_Adagolodjo2016_IROS_inverseFE.pdf`（T-RO 2019 的仿真版前身，内容被 T-RO 2019 覆盖）。

@@ -113,7 +113,7 @@ Q=针尖，P=组织表面接触点，n=表面法向，f_p=穿刺阈值：
 
 **在 SOFA 里对应的组件（待核实）**：
 - `FreeMotionAnimationLoop`
-- `BlockGaussSeidelConstraintSolver` / `ProjectedGaussSeidelConstraintSolver`
+- `BlockGaussSeidelConstraintSolver`（v25.12 没有 ProjectedGaussSeidel）
 - `LinearSolverConstraintCorrection` 或 `PrecomputedConstraintCorrection`
 - `BeamFEMForceField`
 - `TetrahedronFEMForceField` / `FastTetrahedralCorotationalForceField`
