@@ -29,10 +29,15 @@
   export LD_LIBRARY_PATH=$SOFA_ROOT/lib
   ```
 - 编译好的插件：`~/sofa/reference_install`（v25.12 版 CollisionAlgorithm / ConstraintGeometry）、`~/sofa/resources/install_master`（上游 master 版）、`~/sofa/resources/install_cosserat`。
+- 本项目的修补插件：源码 `plugins/NeedleSimFixes/`（FTC 刚度矩阵 bug 的修复），编译到 `~/sofa/needle_build/NeedleSimFixes/`（`cmake <src> -DCMAKE_PREFIX_PATH=$SOFA_ROOT/lib/cmake -DCMAKE_BUILD_TYPE=Release && make`）；`scenes/common.py` 自动加载。
 - 编译带 Python 绑定的插件：用本地的 pybind11 2.12（`~/sofa/resources/pybind11-install`），加 `-DPYBIND11_BUILD_ABI=\"_cxxabi1016\"`（SOFA 二进制包是 GCC 11 编译的），必要时 `-DCMAKE_DISABLE_FIND_PACKAGE_SoftRobots=TRUE`。
 
 ## 注意事项
 - `~/sofa/reference_*`、`~/sofa/diagnostic_*`、`~/sofa/resources/` 下的克隆：**只读，不要修改**。实验脚本要设 `sys.dont_write_bytecode = True`，避免往这些目录里写缓存。
 - `NeedleInsertion_*.json`、`diagnostics/`：只保留在本地，**不提交、不删除**（已写进 `.git/info/exclude`）。
 - 提交 git 前要征得同意；提交时只包含相关文件。
-- 当前阶段：资源学习已完成（2026-09-30），**项目的实施要等用户批准后再开始**。
+- 协作方式（用户 2026-09-30 确定）：Claude 是主要执行者和技术判断者；ChatGPT 作为第二技术视角，直接读 GitHub 仓库做关键节点检查。GitHub 仓库是双方共同依据的项目事实。每个阶段或一组有意义的结果完成后，先给用户一份简短总结（关键结论、实验结果、修改内容），用户确认后再 commit + push。文档要写到外部读者不看对话也能看懂（结果、脚本、数据路径）。
+- 当前阶段：第 0 步（地基）实施中（用户 2026-09-30 批准）。方案 `docs/plan/00_start_plan.md`，物理说明 `docs/plan/step0_foundation.md`，结果 `docs/plan/step0_results.md`；场景代码 `scenes/`（`common.py` + `step0/`），数据 `results/step0/`。每个机制经用户确认后才进入下一个。
+- 用户决定（2026-09-30）：速度 = 动画不卡顿、接近真实穿刺速度（每步计算时间 ≤ dt）；3D 组织；先刚性针；组织用共旋线弹性；参数先用文献值；"破裂"定义和柔性针模型暂缓。
+- 用户决定（2026-09-30）：组织力场 = `FastTetrahedralCorotationalForceFieldFixed`（`plugins/NeedleSimFixes`），`method="polar"`；第 1–4 步机制验证用 ν = 0.45，这是**验证用参数，不是最终组织参数**，最终参数和接近不可压缩问题留到物理验证 / 参数辨识阶段。
+- 原则：在能实现目标机制的前提下尽量复用已有资源，但不为了靠近某个示例而偏离自己的路线。

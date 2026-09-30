@@ -1,0 +1,13 @@
+L=8cm h=10.0mm F dofs=  2187 nu=0.30 frictionless punch=  5 a_eff=12.62mm k= 150.08N/m k/kS(a)=1.366 k/kS(a_eff)=1.083 F+Fbot=+6.0e-11 resid=4.3e-11 t=0.1s it=3 ConvergedAbsoluteResidual
+L=8cm h= 5.0mm F dofs= 14739 nu=0.30 frictionless punch= 13 a_eff=10.17mm k= 120.76N/m k/kS(a)=1.099 k/kS(a_eff)=1.080 F+Fbot=+2.6e-10 resid=1.0e-10 t=6.3s it=3 ConvergedAbsoluteResidual
+L=16cm h=10.0mm F dofs= 14739 nu=0.30 frictionless punch=  5 a_eff=12.62mm k= 149.80N/m k/kS(a)=1.363 k/kS(a_eff)=1.081 F+Fbot=+6.2e-11 resid=4.4e-11 t=6.4s it=3 ConvergedAbsoluteResidual
+L=8cm h=10.0mm F dofs=  2187 nu=0.45 frictionless punch=  5 a_eff=12.62mm k= 177.12N/m k/kS(a)=1.413 k/kS(a_eff)=1.120 F+Fbot=+8.0e-11 resid=6.0e-11 t=0.1s it=3 ConvergedAbsoluteResidual
+L=8cm h= 5.0mm F dofs= 14739 nu=0.45 frictionless punch= 13 a_eff=10.17mm k= 141.88N/m k/kS(a)=1.131 k/kS(a_eff)=1.112 F+Fbot=+4.8e-10 resid=1.9e-10 t=6.1s it=3 ConvergedAbsoluteResidual
+L=16cm h=10.0mm F dofs= 14739 nu=0.45 frictionless punch=  5 a_eff=12.62mm k= 180.80N/m k/kS(a)=1.442 k/kS(a_eff)=1.143 F+Fbot=+9.4e-11 resid=6.7e-11 t=6.4s it=3 ConvergedAbsoluteResidual
+L=8cm h=10.0mm F dofs=  2187 nu=0.49 frictionless punch=  5 a_eff=12.62mm k= 220.16N/m k/kS(a)=1.673 k/kS(a_eff)=1.326 F+Fbot=+3.8e-11 resid=3.5e-11 t=0.1s it=3 ConvergedAbsoluteResidual
+L=8cm h= 5.0mm F dofs= 14739 nu=0.49 frictionless punch= 13 a_eff=10.17mm k= 173.29N/m k/kS(a)=1.317 k/kS(a_eff)=1.295 F+Fbot=+4.7e-10 resid=2.0e-10 t=6.0s it=3 ConvergedAbsoluteResidual
+L=16cm h=10.0mm F dofs= 14739 nu=0.49 frictionless punch=  5 a_eff=12.62mm k= 235.17N/m k/kS(a)=1.787 k/kS(a_eff)=1.417 F+Fbot=+6.6e-11 resid=5.0e-11 t=6.3s it=3 ConvergedAbsoluteResidual
+L=8cm h= 5.0mm F dofs= 14739 nu=0.30 bonded       punch= 13 a_eff=10.17mm k= 122.51N/m k/kS(a)=1.115 k/kS(a_eff)=1.096 F+Fbot=+2.7e-10 resid=1.0e-10 t=6.5s it=3 ConvergedAbsoluteResidual
+L=8cm h= 5.0mm F dofs= 14739 nu=0.49 bonded       punch= 13 a_eff=10.17mm k= 180.94N/m k/kS(a)=1.375 k/kS(a_eff)=1.352 F+Fbot=+5.5e-10 resid=2.3e-10 t=6.7s it=3 ConvergedAbsoluteResidual
+L=8cm h= 5.0mm F dofs= 14739 nu=0.30 frictionless punch= 13 a_eff=10.17mm k= 120.95N/m k/kS(a)=1.101 k/kS(a_eff)=1.082 F+Fbot=+6.3e-11 resid=2.0e-11 t=4.1s it=2 ConvergedAbsoluteResidual
+L=8cm h= 5.0mm F dofs= 14739 nu=0.30 frictionless punch= 13 a_eff=10.17mm k= 119.89N/m k/kS(a)=1.091 k/kS(a_eff)=1.073 F+Fbot=+1.2e-10 resid=5.0e-11 t=9.8s it=5 ConvergedAbsoluteResidual

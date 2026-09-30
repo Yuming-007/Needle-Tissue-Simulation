@@ -1,0 +1,767 @@
+---------------------------------------
+Checking SOFA_ROOT and SOFAPYTHON3_ROOT
+Using environment variable SOFA_ROOT: /home/yuming/sofa/SOFA_v25.12.00_Linux
+---------------------------------------
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.AnimationLoop.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Geometry.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.Algorithm.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.Intersection.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.Mapper.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.Contact.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Correction.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Model.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Solver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Projective.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Controller.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Diffusion.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Analyze.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Generate.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Select.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Transform.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Haptics.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.IO.Mesh.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.IO.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Ordering.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Direct.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Iterative.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Preconditioner.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSystem.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.Linear.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.NonLinear.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mass.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.MechanicalLoad.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.Backward.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.Forward.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Playback.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SceneUtility.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Setting.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.Elastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.HyperElastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.NonUniform.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.Spring.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.TensorMass.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.StateContainer.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Constant.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Dynamic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Grid.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Mapping.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Utility.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Visual.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/needle_build/NeedleSimFixes/libNeedleSimFixes.so
+nu=0.3 FTCfix polar  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.94e-12  (b) |f'-Rf|/|f|=3.99e-13
+nu=0.3 FTCfix polar  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.05e-12  (b) |f'-Rf|/|f|=6.09e-13
+nu=0.3 FTCfix polar  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.32e-12  (b) |f'-Rf|/|f|=2.79e-13
+nu=0.3 FTCfix polar  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.12e-12  (b) |f'-Rf|/|f|=5.60e-13
+nu=0.3 FTCfix qr     axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.89e-12  (b) |f'-Rf|/|f|=4.13e-13
+nu=0.3 FTCfix qr     axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.09e-12  (b) |f'-Rf|/|f|=6.07e-13
+nu=0.3 FTCfix qr     axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.37e-12  (b) |f'-Rf|/|f|=2.79e-13
+nu=0.3 FTCfix qr     axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.03e-12  (b) |f'-Rf|/|f|=5.59e-13
+nu=0.3 FTCfix none   axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.34e+02  (b) |f'-Rf|/|f|=3.95e+01
+nu=0.3 FTCfix none   axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=1.68e+02  (b) |f'-Rf|/|f|=3.96e+01
+nu=0.3 FTCfix none   axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.00e+03  (b) |f'-Rf|/|f|=2.96e+02
+nu=0.3 FTCfix none   axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=1.20e+03  (b) |f'-Rf|/|f|=2.95e+02
+nu=0.3 FTC    qr     axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.89e-12  (b) |f'-Rf|/|f|=4.13e-13
+nu=0.3 FTC    qr     axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.09e-12  (b) |f'-Rf|/|f|=6.07e-13
+nu=0.3 FTC    qr     axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.37e-12  (b) |f'-Rf|/|f|=2.79e-13
+nu=0.3 FTC    qr     axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.03e-12  (b) |f'-Rf|/|f|=5.59e-13
+nu=0.3 FTC    polar  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.94e-12  (b) |f'-Rf|/|f|=3.99e-13
+nu=0.3 FTC    polar  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.05e-12  (b) |f'-Rf|/|f|=6.09e-13
+nu=0.3 FTC    polar  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.32e-12  (b) |f'-Rf|/|f|=2.79e-13
+nu=0.3 FTC    polar  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.12e-12  (b) |f'-Rf|/|f|=5.60e-13
+nu=0.3 FTC    polar2 axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.91e-12  (b) |f'-Rf|/|f|=3.99e-13
+nu=0.3 FTC    polar2 axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.09e-12  (b) |f'-Rf|/|f|=6.10e-13
+nu=0.3 FTC    polar2 axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.40e-12  (b) |f'-Rf|/|f|=2.82e-13
+nu=0.3 FTC    polar2 axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.09e-12  (b) |f'-Rf|/|f|=5.60e-13
+nu=0.3 FTC    none   axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.34e+02  (b) |f'-Rf|/|f|=3.95e+01
+nu=0.3 FTC    none   axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=1.68e+02  (b) |f'-Rf|/|f|=3.96e+01
+nu=0.3 FTC    none   axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.00e+03  (b) |f'-Rf|/|f|=2.96e+02
+nu=0.3 FTC    none   axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=1.20e+03  (b) |f'-Rf|/|f|=2.95e+02
+nu=0.3 TFEM   large  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=2.46e-12  (b) |f'-Rf|/|f|=4.82e-13
+nu=0.3 TFEM   large  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.47e-12  (b) |f'-Rf|/|f|=6.76e-13
+nu=0.3 TFEM   large  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=2.07e-12  (b) |f'-Rf|/|f|=3.55e-13
+nu=0.3 TFEM   large  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.50e-12  (b) |f'-Rf|/|f|=6.28e-13
+nu=0.3 TFEM   polar  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=7.37e-12  (b) |f'-Rf|/|f|=1.35e-12
+nu=0.3 TFEM   polar  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.69e-12  (b) |f'-Rf|/|f|=7.18e-13
+nu=0.3 TFEM   polar  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.93e-11  (b) |f'-Rf|/|f|=3.68e-12
+nu=0.3 TFEM   polar  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=1.18e-11  (b) |f'-Rf|/|f|=2.26e-12
+nu=0.3 TFEM   svd    axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=7.37e-12  (b) |f'-Rf|/|f|=1.35e-12
+nu=0.3 TFEM   svd    axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.69e-12  (b) |f'-Rf|/|f|=7.18e-13
+nu=0.3 TFEM   svd    axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.93e-11  (b) |f'-Rf|/|f|=3.68e-12
+nu=0.3 TFEM   svd    axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=1.18e-11  (b) |f'-Rf|/|f|=2.26e-12
+nu=0.3 TFEM   small  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.34e+02  (b) |f'-Rf|/|f|=3.95e+01
+nu=0.3 TFEM   small  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=1.68e+02  (b) |f'-Rf|/|f|=3.96e+01
+nu=0.3 TFEM   small  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.00e+03  (b) |f'-Rf|/|f|=2.96e+02
+nu=0.3 TFEM   small  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=1.20e+03  (b) |f'-Rf|/|f|=2.95e+02
+nu=0.49 FTCfix polar  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=2.19e-11  (b) |f'-Rf|/|f|=4.34e-12
+nu=0.49 FTCfix polar  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.34e-11  (b) |f'-Rf|/|f|=6.57e-12
+nu=0.49 FTCfix polar  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.66e-11  (b) |f'-Rf|/|f|=2.95e-12
+nu=0.49 FTCfix polar  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.47e-11  (b) |f'-Rf|/|f|=5.58e-12
+nu=0.49 FTCfix qr     axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=2.09e-11  (b) |f'-Rf|/|f|=4.66e-12
+nu=0.49 FTCfix qr     axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.42e-11  (b) |f'-Rf|/|f|=6.93e-12
+nu=0.49 FTCfix qr     axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.76e-11  (b) |f'-Rf|/|f|=3.25e-12
+nu=0.49 FTCfix qr     axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.31e-11  (b) |f'-Rf|/|f|=5.99e-12
+nu=0.49 FTCfix none   axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=2.68e+03  (b) |f'-Rf|/|f|=7.70e+02
+nu=0.49 FTCfix none   axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=2.71e+03  (b) |f'-Rf|/|f|=7.74e+02
+nu=0.49 FTCfix none   axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=2.00e+04  (b) |f'-Rf|/|f|=5.79e+03
+nu=0.49 FTCfix none   axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=2.02e+04  (b) |f'-Rf|/|f|=5.76e+03
+nu=0.49 FTC    qr     axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=2.09e-11  (b) |f'-Rf|/|f|=4.66e-12
+nu=0.49 FTC    qr     axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.42e-11  (b) |f'-Rf|/|f|=6.93e-12
+nu=0.49 FTC    qr     axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.76e-11  (b) |f'-Rf|/|f|=3.25e-12
+nu=0.49 FTC    qr     axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.31e-11  (b) |f'-Rf|/|f|=5.99e-12
+nu=0.49 FTC    polar  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=2.19e-11  (b) |f'-Rf|/|f|=4.34e-12
+nu=0.49 FTC    polar  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.34e-11  (b) |f'-Rf|/|f|=6.57e-12
+nu=0.49 FTC    polar  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.66e-11  (b) |f'-Rf|/|f|=2.95e-12
+nu=0.49 FTC    polar  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.47e-11  (b) |f'-Rf|/|f|=5.58e-12
+nu=0.49 FTC    polar2 axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=2.15e-11  (b) |f'-Rf|/|f|=4.63e-12
+nu=0.49 FTC    polar2 axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=3.41e-11  (b) |f'-Rf|/|f|=6.70e-12
+nu=0.49 FTC    polar2 axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=1.82e-11  (b) |f'-Rf|/|f|=3.18e-12
+nu=0.49 FTC    polar2 axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=3.47e-11  (b) |f'-Rf|/|f|=5.64e-12
+nu=0.49 FTC    none   axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=2.68e+03  (b) |f'-Rf|/|f|=7.70e+02
+nu=0.49 FTC    none   axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=2.71e+03  (b) |f'-Rf|/|f|=7.74e+02
+nu=0.49 FTC    none   axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=2.00e+04  (b) |f'-Rf|/|f|=5.79e+03
+nu=0.49 FTC    none   axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=2.02e+04  (b) |f'-Rf|/|f|=5.76e+03
+nu=0.49 TFEM   large  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=3.09e-11  (b) |f'-Rf|/|f|=5.16e-12
+nu=0.49 TFEM   large  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=4.13e-11  (b) |f'-Rf|/|f|=8.30e-12
+nu=0.49 TFEM   large  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=2.87e-11  (b) |f'-Rf|/|f|=4.73e-12
+nu=0.49 TFEM   large  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=4.19e-11  (b) |f'-Rf|/|f|=7.42e-12
+nu=0.49 TFEM   polar  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.31e-10  (b) |f'-Rf|/|f|=2.52e-11
+nu=0.49 TFEM   polar  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=4.34e-11  (b) |f'-Rf|/|f|=8.04e-12
+nu=0.49 TFEM   polar  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=2.78e-10  (b) |f'-Rf|/|f|=5.10e-11
+nu=0.49 TFEM   polar  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=1.66e-10  (b) |f'-Rf|/|f|=3.17e-11
+nu=0.49 TFEM   svd    axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=1.31e-10  (b) |f'-Rf|/|f|=2.52e-11
+nu=0.49 TFEM   svd    axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=4.34e-11  (b) |f'-Rf|/|f|=8.04e-12
+nu=0.49 TFEM   svd    axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=2.78e-10  (b) |f'-Rf|/|f|=5.10e-11
+nu=0.49 TFEM   svd    axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=1.66e-10  (b) |f'-Rf|/|f|=3.17e-11
+nu=0.49 TFEM   small  axis=(0, 0, 1)  30deg: (a) sum|f|/0.32N=2.68e+03  (b) |f'-Rf|/|f|=7.70e+02
+nu=0.49 TFEM   small  axis=(1, 1, 1)  30deg: (a) sum|f|/0.32N=2.71e+03  (b) |f'-Rf|/|f|=7.74e+02
+nu=0.49 TFEM   small  axis=(1, 0, 0)  90deg: (a) sum|f|/0.32N=2.00e+04  (b) |f'-Rf|/|f|=5.79e+03
+nu=0.49 TFEM   small  axis=(1, 2, 3)  90deg: (a) sum|f|/0.32N=2.02e+04  (b) |f'-Rf|/|f|=5.76e+03
+[INFO]    [SofaPython3.Simulation] Sofa.Simulation unload()
+[INFO]    [SofaPython3] Clearing Sofa.Core cache...
+[INFO]    [SofaPython3.Core] Sofa.Core unload()
+[INFO]    [SofaPython3.Helper] Sofa.Helper unload()
+---------------------------------------
+Checking SOFA_ROOT and SOFAPYTHON3_ROOT
+Using environment variable SOFA_ROOT: /home/yuming/sofa/SOFA_v25.12.00_Linux
+---------------------------------------
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.AnimationLoop.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Geometry.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.Algorithm.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.Intersection.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.Mapper.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.Contact.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Correction.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Model.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Solver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Projective.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Controller.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Diffusion.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Analyze.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Generate.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Select.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Transform.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Haptics.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.IO.Mesh.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.IO.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Ordering.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Direct.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Iterative.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Preconditioner.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSystem.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.Linear.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.NonLinear.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mass.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.MechanicalLoad.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.Backward.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.Forward.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Playback.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SceneUtility.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Setting.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.Elastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.HyperElastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.NonUniform.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.Spring.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.TensorMass.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.StateContainer.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Constant.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Dynamic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Grid.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Mapping.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Utility.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Visual.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/needle_build/NeedleSimFixes/libNeedleSimFixes.so
+FTCfix polar  ldl nu=0.30 h=20.0mm eps=+1e-02 F=+0.32000N (-6.77e-15) lat=-0.30000 (-3.61e-14) field=2.25e-14 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.30 h=10.0mm eps=+1e-02 F=+0.32000N (+4.09e-14) lat=-0.30000 (-7.39e-13) field=2.06e-13 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.30 h= 5.0mm eps=+1e-02 F=+0.32000N (-1.48e-13) lat=-0.30000 (-6.18e-12) field=1.84e-12 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.30 h=10.0mm eps=+1e-04 F=+0.00320N (+2.04e-12) lat=-0.30000 (-3.71e-10) field=1.07e-10 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.30 h=10.0mm eps=+1e-03 F=+0.03200N (-5.10e-13) lat=-0.30000 (-2.23e-11) field=6.68e-12 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.30 h=10.0mm eps=-1e-02 F=-0.32000N (+3.84e-14) lat=-0.30000 (+4.08e-13) field=1.24e-13 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.30 h=10.0mm eps=+5e-02 F=+1.60000N (+1.55e-15) lat=-0.30000 (-2.51e-13) field=6.89e-14 ConvergedResidualInitialRatio
+FTCfix polar  ldl nu=0.49 h=20.0mm eps=+1e-02 F=+0.32000N (+3.53e-14) lat=-0.49000 (-2.29e-12) field=9.33e-13 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.49 h=10.0mm eps=+1e-02 F=+0.32000N (+3.50e-13) lat=-0.49000 (-2.40e-11) field=1.17e-11 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.49 h= 5.0mm eps=+1e-02 F=+0.32000N (-1.61e-12) lat=-0.49000 (-1.31e-12) field=6.55e-13 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.49 h=10.0mm eps=+1e-04 F=+0.00320N (+1.77e-11) lat=-0.49000 (-1.82e-10) field=7.76e-11 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.49 h=10.0mm eps=+1e-03 F=+0.03200N (-4.26e-12) lat=-0.49000 (-2.50e-10) field=1.23e-10 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.49 h=10.0mm eps=-1e-02 F=-0.32000N (+3.36e-13) lat=-0.49000 (+1.52e-12) field=6.45e-13 ConvergedRelativeEstimateDifference
+FTCfix polar  ldl nu=0.49 h=10.0mm eps=+5e-02 F=+1.60000N (+1.51e-14) lat=-0.49000 (-2.49e-11) field=1.18e-11 ConvergedResidualSuccessiveRatio
+FTCfix polar  cg  nu=0.30 h=20.0mm eps=+1e-02 F=+0.32000N (-8.33e-15) lat=-0.30000 (-5.54e-13) field=1.56e-13 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.30 h=10.0mm eps=+1e-02 F=+0.32000N (+4.04e-14) lat=-0.30000 (-2.21e-13) field=4.98e-14 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.30 h= 5.0mm eps=+1e-02 F=+0.32000N (-1.48e-13) lat=-0.30000 (-2.40e-12) field=7.26e-13 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.30 h=10.0mm eps=+1e-04 F=+0.00320N (+1.55e-12) lat=-0.30000 (-8.50e-13) field=9.85e-13 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.30 h=10.0mm eps=+1e-03 F=+0.03200N (-4.81e-13) lat=-0.30000 (-1.10e-13) field=1.27e-13 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.30 h=10.0mm eps=-1e-02 F=-0.32000N (+4.06e-14) lat=-0.30000 (+1.12e-13) field=3.52e-14 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.30 h=10.0mm eps=+5e-02 F=+1.60000N (+1.11e-15) lat=-0.30000 (-4.21e-13) field=1.27e-13 ConvergedResidualSuccessiveRatio
+FTCfix polar  cg  nu=0.49 h=20.0mm eps=+1e-02 F=+0.32000N (+7.48e-14) lat=-0.49000 (-2.96e-12) field=1.47e-12 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.49 h=10.0mm eps=+1e-02 F=+0.32000N (+4.42e-13) lat=-0.49000 (-1.34e-11) field=6.55e-12 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.49 h= 5.0mm eps=+1e-02 F=+0.32000N (-1.79e-12) lat=-0.49000 (-1.49e-10) field=7.21e-11 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.49 h=10.0mm eps=+1e-04 F=+0.00320N (+2.58e-11) lat=-0.49000 (-1.03e-09) field=5.05e-10 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.49 h=10.0mm eps=+1e-03 F=+0.03200N (-3.76e-12) lat=-0.49000 (-5.69e-11) field=2.70e-11 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.49 h=10.0mm eps=-1e-02 F=-0.32000N (+4.33e-13) lat=-0.49000 (+3.29e-12) field=1.64e-12 ConvergedRelativeEstimateDifference
+FTCfix polar  cg  nu=0.49 h=10.0mm eps=+5e-02 F=+1.60000N (+1.27e-14) lat=-0.49000 (-1.69e-12) field=8.31e-13 ConvergedResidualInitialRatio
+FTCfix qr     ldl nu=0.30 h=10.0mm eps=+1e-04 F=+0.00320N (-1.37e-05) lat=-0.29990 (-3.19e-04) field=8.42e-05 ConvergedRelativeEstimateDifference
+FTCfix qr     ldl nu=0.30 h=10.0mm eps=+1e-03 F=+0.03200N (-1.37e-04) lat=-0.29904 (-3.19e-03) field=8.42e-04 ConvergedRelativeEstimateDifference
+FTCfix qr     ldl nu=0.30 h=10.0mm eps=+1e-02 F=+0.31956N (-1.36e-03) lat=-0.29060 (-3.13e-02) field=8.43e-03 ConvergedRelativeEstimateDifference
+FTCfix qr     ldl nu=0.30 h=10.0mm eps=-1e-02 F=-0.32044N (+1.37e-03) lat=-0.30977 (+3.26e-02) field=8.40e-03 ConvergedRelativeEstimateDifference
+FTCfix qr     ldl nu=0.30 h=10.0mm eps=+5e-02 F=+1.58927N (-6.70e-03) lat=-0.25640 (-1.45e-01) field=4.16e-02 ConvergedRelativeEstimateDifference
+FTCfix qr     ldl nu=0.49 h=10.0mm eps=+1e-04 F=+0.00320N (-1.80e-05) lat=-0.48985 (-3.11e-04) field=8.51e-05 ConvergedRelativeEstimateDifference
+FTCfix qr     ldl nu=0.49 h=10.0mm eps=+1e-03 F=+0.03199N (-1.80e-04) lat=-0.48848 (-3.09e-03) field=8.45e-04 ConvergedRelativeEstimateDifference
+FTCfix qr     ldl nu=0.49 h=10.0mm eps=+1e-02 F=+0.31943N (-1.79e-03) lat=-0.47537 (-2.99e-02) field=7.92e-03 ConvergedRelativeEstimateDifference
+FTCfix qr     ldl nu=0.49 h=10.0mm eps=-1e-02 F=-0.32058N (+1.81e-03) lat=-0.50584 (+3.23e-02) field=9.31e-03 ConvergedRelativeEstimateDifference
+FTCfix qr     ldl nu=0.49 h=10.0mm eps=+5e-02 F=+1.58599N (-8.76e-03) lat=-0.42767 (-1.27e-01) field=3.49e-02 ConvergedResidualInitialRatio
+FTCfix none   ldl nu=0.30 h=10.0mm eps=+1e-04 F=+0.00320N (+1.64e-12) lat=-0.30000 (-1.94e-11) field=5.25e-12 ConvergedRelativeEstimateDifference
+FTCfix none   ldl nu=0.30 h=10.0mm eps=+1e-03 F=+0.03200N (-5.08e-13) lat=-0.30000 (-3.07e-12) field=9.14e-13 ConvergedRelativeEstimateDifference
+FTCfix none   ldl nu=0.30 h=10.0mm eps=+1e-02 F=+0.32000N (+4.09e-14) lat=-0.30000 (-1.47e-13) field=4.98e-14 ConvergedRelativeEstimateDifference
+FTCfix none   ldl nu=0.30 h=10.0mm eps=-1e-02 F=-0.32000N (+4.09e-14) lat=-0.30000 (+1.12e-13) field=4.98e-14 ConvergedRelativeEstimateDifference
+FTCfix none   ldl nu=0.30 h=10.0mm eps=+5e-02 F=+1.60000N (+1.78e-15) lat=-0.30000 (-1.32e-13) field=4.04e-14 ConvergedResidualInitialRatio
+FTCfix none   ldl nu=0.49 h=10.0mm eps=+1e-04 F=+0.00320N (+2.49e-11) lat=-0.49000 (-2.79e-11) field=1.40e-11 ConvergedRelativeEstimateDifference
+FTCfix none   ldl nu=0.49 h=10.0mm eps=+1e-03 F=+0.03200N (-6.45e-12) lat=-0.49000 (-3.19e-12) field=1.50e-12 ConvergedRelativeEstimateDifference
+FTCfix none   ldl nu=0.49 h=10.0mm eps=+1e-02 F=+0.32000N (+5.14e-13) lat=-0.49000 (-7.45e-13) field=3.02e-13 ConvergedRelativeEstimateDifference
+FTCfix none   ldl nu=0.49 h=10.0mm eps=-1e-02 F=-0.32000N (+5.14e-13) lat=-0.49000 (+7.51e-13) field=3.02e-13 ConvergedRelativeEstimateDifference
+FTCfix none   ldl nu=0.49 h=10.0mm eps=+5e-02 F=+1.60000N (+1.53e-14) lat=-0.49000 (-2.49e-11) field=1.18e-11 ConvergedResidualSuccessiveRatio
+[orig] FTC    polar  ldl nu=0.25 h=10.0mm eps=+1e-02 F=+0.32000N (+3.75e-14) lat=-0.25000 (-1.58e-12) field=3.79e-13 ConvergedRelativeEstimateDifference
+[orig] FTC    none   ldl nu=0.25 h=10.0mm eps=+1e-02 F=+0.32000N (+3.62e-14) lat=-0.25000 (-2.13e-14) field=1.38e-14 ConvergedRelativeEstimateDifference
+[orig] FTC    polar  ldl nu=0.30 h=10.0mm eps=+1e-02 F=-3815759.69318N (-1.19e+07) lat=+176479733.36054 (-5.88e+08) field=1.76e+08 DivergedMaxIterations
+[orig] FTC    none   ldl nu=0.30 h=10.0mm eps=+1e-02 F=+15071167500279278893173613199743073115323112482429896431109066533717903791605637022682647000776704.00000N (+4.71e+97) lat=+24516393854191310283513641147002813462459781081061458482155612641575566623271862249046807073450360832.00000 (-8.17e+100) field=6.39e+100 DivergedMaxIterations
+[orig] FTC    polar  ldl nu=0.45 h=10.0mm eps=+1e-02 F=+nanN (+nan) lat=+nan (+nan) field=nan DivergedMaxIterations
+[orig] FTC    none   ldl nu=0.45 h=10.0mm eps=+1e-02 F=+241960276917758867882377378820340504922368160160384253119761867096484449472091987408089390180963347951779840.00000N (+7.56e+107) lat=+390530156546287846285998854577917768190303727439677009046345830410701771068828326540881678668103730700075663360.00000 (-8.68e+110) field=2.35e+110 DivergedMaxIterations
+[orig] FTC    polar  ldl nu=0.49 h=10.0mm eps=+1e-02 F=+nanN (+nan) lat=+nan (+nan) field=nan DivergedMaxIterations
+[orig] FTC    none   ldl nu=0.49 h=10.0mm eps=+1e-02 F=+730905036378671471999302174680905031371750611986463123809132251613965256847816699390021385909748884350767910273697521530153243657763569636604197274741680096261869009631274777163711304958421762048.00000N (+2.28e+195) lat=+5560807446344210176447789374533705970509498892837561573359596103702742045973174556149041342851592446993737415707558227572885690772716659277390163685243394861397606303099637998007781817223860977664.00000 (-1.13e+196) field=2.85e+195 DivergedMaxIterations
+TFEM   large  ldl nu=0.30 h=10.0mm eps=+1e-02 F=+0.31956N (-1.36e-03) lat=-0.29060 (-3.13e-02) field=8.43e-03 ConvergedRelativeEstimateDifference
+TFEM   large  ldl nu=0.30 h=10.0mm eps=+5e-02 F=+1.58927N (-6.70e-03) lat=-0.25640 (-1.45e-01) field=4.16e-02 ConvergedRelativeEstimateDifference
+TFEM   large  ldl nu=0.49 h=10.0mm eps=+1e-02 F=+0.31943N (-1.79e-03) lat=-0.47537 (-2.99e-02) field=7.92e-03 ConvergedRelativeEstimateDifference
+TFEM   large  ldl nu=0.49 h=10.0mm eps=+5e-02 F=+1.58599N (-8.76e-03) lat=-0.42767 (-1.27e-01) field=3.49e-02 ConvergedRelativeEstimateDifference
+TFEM   polar  ldl nu=0.30 h=10.0mm eps=+1e-02 F=+0.31984N (-4.92e-04) lat=-0.29377 (-2.08e-02) field=5.78e-03 ConvergedRelativeEstimateDifference
+TFEM   polar  ldl nu=0.30 h=10.0mm eps=+5e-02 F=+1.59605N (-2.47e-03) lat=-0.27065 (-9.78e-02) field=2.68e-02 ConvergedRelativeEstimateDifference
+TFEM   polar  ldl nu=0.49 h=10.0mm eps=+1e-02 F=+0.31979N (-6.47e-04) lat=-0.48336 (-1.36e-02) field=6.53e-03 ConvergedRelativeEstimateDifference
+TFEM   polar  ldl nu=0.49 h=10.0mm eps=+5e-02 F=+1.59479N (-3.26e-03) lat=-0.44475 (-9.24e-02) field=4.54e-02 ConvergedRelativeEstimateDifference
+[INFO]    [SofaPython3.Simulation] Sofa.Simulation unload()
+[INFO]    [SofaPython3] Clearing Sofa.Core cache...
+[INFO]    [SofaPython3.Core] Sofa.Core unload()
+[INFO]    [SofaPython3.Helper] Sofa.Helper unload()
+---------------------------------------
+Checking SOFA_ROOT and SOFAPYTHON3_ROOT
+Using environment variable SOFA_ROOT: /home/yuming/sofa/SOFA_v25.12.00_Linux
+---------------------------------------
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.AnimationLoop.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Geometry.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.Algorithm.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.Intersection.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.Mapper.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.Contact.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Correction.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Model.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Solver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Projective.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Controller.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Diffusion.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Analyze.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Generate.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Select.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Transform.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Haptics.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.IO.Mesh.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.IO.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Ordering.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Direct.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Iterative.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Preconditioner.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSystem.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.Linear.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.NonLinear.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mass.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.MechanicalLoad.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.Backward.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.Forward.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Playback.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SceneUtility.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Setting.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.Elastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.HyperElastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.NonUniform.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.Spring.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.TensorMass.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.StateContainer.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Constant.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Dynamic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Grid.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Mapping.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Utility.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Visual.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/needle_build/NeedleSimFixes/libNeedleSimFixes.so
+FTCfix polar nu=0.30 twist= 0 comp=0.01: LDL ConvergedRelativeEstimateDifference it=  6 | CG ConvergedRelativeEstimateDifference it=  6 | max|x_ldl-x_cg|/L=1.73e-16
+FTCfix polar nu=0.30 twist=45 comp=0.10: LDL ConvergedResidualInitialRatio  it= 21 | CG ConvergedResidualInitialRatio  it= 21 | max|x_ldl-x_cg|/L=1.73e-16
+FTCfix polar nu=0.49 twist= 0 comp=0.01: LDL ConvergedRelativeEstimateDifference it=  8 | CG ConvergedRelativeEstimateDifference it=  8 | max|x_ldl-x_cg|/L=5.20e-16
+FTCfix polar nu=0.49 twist=45 comp=0.10: LDL ConvergedResidualInitialRatio  it= 21 | CG ConvergedResidualInitialRatio  it= 21 | max|x_ldl-x_cg|/L=6.94e-16
+FTCfix none  nu=0.30 twist= 0 comp=0.01: LDL ConvergedRelativeEstimateDifference it=  2 | CG ConvergedRelativeEstimateDifference it=  2 | max|x_ldl-x_cg|/L=1.73e-16
+FTCfix none  nu=0.30 twist=45 comp=0.10: LDL ConvergedResidualSuccessiveRatio it=  1 | CG ConvergedResidualInitialRatio  it=  2 | max|x_ldl-x_cg|/L=2.04e-15
+FTCfix none  nu=0.49 twist= 0 comp=0.01: LDL ConvergedRelativeEstimateDifference it=  2 | CG ConvergedRelativeEstimateDifference it=  2 | max|x_ldl-x_cg|/L=1.73e-16
+FTCfix none  nu=0.49 twist=45 comp=0.10: LDL ConvergedResidualSuccessiveRatio it=  1 | CG ConvergedResidualInitialRatio  it=  2 | max|x_ldl-x_cg|/L=1.41e-14
+FTC    polar nu=0.30 twist= 0 comp=0.01: LDL ConvergedRelativeEstimateDifference it= 77 | CG ConvergedRelativeEstimateDifference it=  6 | max|x_ldl-x_cg|/L=1.02e-14
+FTC    polar nu=0.30 twist=45 comp=0.10: LDL ConvergedResidualInitialRatio  it= 94 | CG ConvergedResidualInitialRatio  it= 21 | max|x_ldl-x_cg|/L=6.25e-15
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[ERROR]   [SparseLDLSolver] Failed to factorize, D(k,k) is zero
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+FTC    polar nu=0.49 twist= 0 comp=0.01: LDL DivergedMaxIterations          it=100 | CG ConvergedRelativeEstimateDifference it=  8 | max|x_ldl-x_cg|/L=inf
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[ERROR]   [SparseLDLSolver] Failed to factorize, D(k,k) is zero
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[ERROR]   [SparseLDLSolver] Failed to factorize, D(k,k) is zero
+FTC    polar nu=0.49 twist=45 comp=0.10: LDL DivergedMaxIterations          it=100 | CG ConvergedResidualInitialRatio  it= 21 | max|x_ldl-x_cg|/L=inf
+FTC    none  nu=0.30 twist= 0 comp=0.01: LDL ConvergedRelativeEstimateDifference it= 84 | CG ConvergedRelativeEstimateDifference it=  2 | max|x_ldl-x_cg|/L=1.14e-14
+FTC    none  nu=0.30 twist=45 comp=0.10: LDL DivergedMaxIterations          it=100 | CG ConvergedResidualInitialRatio  it=  2 | max|x_ldl-x_cg|/L=8.36e-14
+FTC    none  nu=0.49 twist= 0 comp=0.01: LDL DivergedMaxIterations          it=100 | CG ConvergedRelativeEstimateDifference it=  2 | max|x_ldl-x_cg|/L=4.45e+258
+FTC    none  nu=0.49 twist=45 comp=0.10: LDL DivergedMaxIterations          it=100 | CG ConvergedResidualInitialRatio  it=  2 | max|x_ldl-x_cg|/L=6.92e+259
+[INFO]    [SofaPython3.Simulation] Sofa.Simulation unload()
+[INFO]    [SofaPython3] Clearing Sofa.Core cache...
+[INFO]    [SofaPython3.Core] Sofa.Core unload()
+[INFO]    [SofaPython3.Helper] Sofa.Helper unload()

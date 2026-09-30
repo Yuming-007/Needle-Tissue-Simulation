@@ -43,6 +43,8 @@
   - **Ogden 的参数换算**〔推导〕：SOFA 的 W_iso = (μ₁/α²)(J^(−α/3) tr C^(α/2) − 3)，W_vol = k₀(ln J)²/2，参数为 [μ₁, α₁, k₀]；Wang 2024/2025 用的是 W = (2μ/α²)(Σλ^α − 3) ⇒ **μ₁(SOFA) = 2 μ(Wang)**。
 - 粘弹：`TetrahedronViscoelasticityFEMForceField`、`TetrahedronViscoHyperelasticityFEMForceField`（SofaViscoElastic 插件）。
 - ⚠️ **弹性应变能读不到**：`FastTetrahedralCorotational` 和 `TetrahedralCorotational` 的 `getPotentialEnergy()` 没有实现（返回 0 并警告）；`TetrahedronFEM` 只在 `method="small"` 时计算，`large` / `polar` 都返回 0。`Node.computeEnergy()` 返回的势能因此只包含重力和弹簧〔运行确认〕。→ 如果需要应变能（比如 Wang 2025 的代价函数），要自己算。
+- ⚠️ **v25.12 的 `FastTetrahedralCorotationalForceField::buildStiffnessMatrix` 有 bug**〔代码 + 运行，2026-09-30 补充〕：两个非对角块都写成了 −M（应为 −M 和 −Mᵀ，`FastTetrahedralCorotationalForceField.inl:551-552`），组装出的刚度矩阵在 ν ≠ 0.25 时是错的。凡是用组装矩阵的线性求解器（`EigenSimplicialLDLT`、`SparseLDLSolver` 等，包括插件官方针场景）都受影响；CG（走 `addDForce`）不受影响。静力测试中直接求解器的 Newton 发散，CG 收敛。上游 PR #6154（2026-06-26，v26.12）已修。**本项目的修复**：`plugins/NeedleSimFixes` 中的 `FastTetrahedralCorotationalForceFieldFixed`（继承原类，只覆盖 `buildStiffnessMatrix`）。`addKToMatrix`（旧接口）是正确的。详见 `docs/plan/step0_results.md` 发现 1。
+- **旋转提取方法的差别**〔代码 + 运行〕：只有 FTC 的 `method="polar"` 对真正的变形梯度做极分解，均匀拉伸时结果精确；FTC `qr`（默认）/ `polar2` 和 TFEM `large` / `polar` 都会把拉伸误算成 O(ε) 的转动（单轴测试中横向应变误差约为 −2ε ～ −3ε）。
 - 可以输出 von Mises 应力（`TetrahedronFEMForceField` 的 `computeVonMisesStress`）。
 
 ## B6. 针〔代码〕
@@ -64,4 +66,18 @@
   - GS 求解：0.4 ms（4%）
   - 碰撞 / 宽相位：约 0.3–0.4 ms
 - → 和文献（Ha 2024：W 占 74–82%）一致：**提速的重点在 W**（预计算柔度、IsoDOF 思路、降阶），GS 不是瓶颈。
+- **直接求解器的分解时间**〔运行，2026-09-30，第 0 步；静力问题，FTCfix，规则网格切四面体，每次 Newton 迭代都重新分解〕：
+
+  | 自由度 | 组装矩阵 | `SparseLDLSolver`（默认 AMD 重排序）分解 |
+  |---|---|---|
+  | 2 187（n = 9） | 3 ms | 16 ms |
+  | 6 591（n = 13） | 10 ms | 230 ms |
+  | 14 739（n = 17） | 27 ms | 1.67–2.1 s |
+  | 20 577（n = 19） | — | 6.4 s |
+  | 27 783（n = 21） | — | 17 s |
+
+  - 分解时间约按自由度的 **3.3 次方**增长（改正记录：最初只用前三个点估计为 2.4 次方，增加 n = 19、21 两个点后改正）。外推到 10.8 万自由度约 25 分钟一次。瓶颈是分解，不是组装。
+  - `EigenSimplicialLDLT` 和 `SparseLDLSolver` 差不多（都是 simplicial，没有 supernodal）。
+  - 可选的重排序组件：`AMDOrderingMethod`（默认，最快）、`NaturalOrderingMethod`（慢约 1.7 倍）、**`COLAMDOrderingMethod`（n = 17 时要 90 s，不要用）**。二进制包里**没有 `MetisOrderingMethod`**。
+  - → 0d 要处理：实时网格的自由度上限，或者换不需要每步重新分解的方案。
 - 多线程组件：`ParallelTetrahedronFEMForceField`、`BeamLinearMapping_mt`、动画循环的并行选项；`MultiThreading` 插件〔没测〕。
