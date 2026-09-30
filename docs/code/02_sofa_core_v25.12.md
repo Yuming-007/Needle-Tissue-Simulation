@@ -23,6 +23,11 @@
 - `StaticSolver`（配合 `NewtonRaphsonSolver`，`maxNbIterationsNewton` 默认 1，带线搜索）：位置积分因子也是 dt，速度因子 1（`StaticSolver.h:60-125`）。静力求解的是 KΔx = f，按 W = dt·J K⁻¹ Jᵀ 推导，λ 相当于 f/dt〔推导，未运行验证〕→ **又是一种不同的约定，不能和 EulerImplicit 的物体放在同一个约束问题里**。`BDFOdeSolver`、`NewmarkImplicitSolver` 也有〔没细读〕。
 - **规则**〔推导 + 运行〕：同一个约束问题里，所有物体的 ODE 求解器要用同一种约定（都用二阶 EulerImplicit 最稳妥），否则同一个 λ 在不同物体上代表不同的物理量。
 
+- **`EulerImplicitSolver` 之后 `force` 里是什么**〔代码，2026-09-30 补充〕：每步开始时在 (xₙ, vₙ) 上计算的内力 f（`EulerImplicitSolver.cpp:92,129`），不被投影（被投影的是它的拷贝 b，:145,160），不含 Rayleigh 项（:150-152 单独加到 b 上）。所以第 k+1 步之后读 `force`，得到的是第 k 步结束时位置上的弹性内力（受约束节点上也有值）。
+- **数值阻尼**〔推导 + 运行〕：对无阻尼振子，特征值 z = 1/(1 − iωh)，σ = ln(1 + ω²h²)/(2h)。实测和理论相差 1% 以内（`docs/plan/step0_results.md` 0a-3）。
+- **Rayleigh 刚度阻尼会抬高准静态力**，比例约为 r_s·v/δ（实测吻合）；r_sω/2 > 1 时变成过阻尼蠕变，时间常数约为 r_s。
+- **`PartialLinearMovementProjectiveConstraint::projectVelocity` 会设置整个速度向量**（`.inl:212-214`，不看 `movedDirections`），所以未被驱动的方向速度也会被清零。
+
 ## B3. ConstraintCorrection（W 的计算方式）〔代码〕
 | 组件 | 做法 | 条件和代价 |
 |---|---|---|

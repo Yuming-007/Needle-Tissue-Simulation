@@ -93,6 +93,23 @@ def add_static_solver(node, linear="cg", newton_iters=50, abs_tol=1e-20):
                        template="CompressedRowSparseMatrixMat3x3d")
 
 
+def add_dynamic_solver(node, rayleigh_mass=0.0, rayleigh_stiffness=0.0, linear="ldl"):
+    """动力学：EulerImplicitSolver（后向 Euler，每步一次线性化）+ 直接线性求解器。
+
+    注意〔代码，EulerImplicitSolver.cpp:92,129,145,160〕：每步开始时在当前 (x_n, v_n) 上算内力 f，
+    存进 MechanicalObject 的 force（不被投影、不含 Rayleigh 项）。所以第 n+1 步 animate 之后读 force，
+    得到的是 x_{n+1}（第 n 步结束时的位置）上的内力。
+    """
+    node.addObject("EulerImplicitSolver", name="odesolver",
+                   rayleighMass=rayleigh_mass, rayleighStiffness=rayleigh_stiffness)
+    if linear == "eigen":
+        node.addObject("EigenSimplicialLDLT", name="linsolver",
+                       template="CompressedRowSparseMatrixMat3x3d")
+    else:
+        node.addObject("SparseLDLSolver", name="linsolver",
+                       template="CompressedRowSparseMatrixMat3x3d")
+
+
 def internal_force(root, node, constraints):
     """读当前构形下的节点内力（只用于静力测试的最后一步，会拆掉约束）。
 
@@ -108,6 +125,28 @@ def internal_force(root, node, constraints):
     if np.all(np.isfinite(x0)):  # 发散（NaN）的对照工况跳过检查
         assert np.abs(mo.position.array() - x0).max() == 0.0
     return mo.force.array().copy()
+
+
+class ForceProbe:
+    """独立的"力探针"场景：和组织同样的网格和材料，没有约束，Newton 迭代 0 次。
+
+    force(x) 返回位置 x 上的节点内力（N,3），不改变任何状态。用来在动力学中读一致状态下的力，
+    以及用有限差分算 K·v ≈ -(f(x + εv) - f(x))/ε（Rayleigh 刚度阻尼力 = -r_s K v）。
+    """
+
+    def __init__(self, **tissue_kw):
+        self.root = make_root()
+        add_static_solver(self.root, linear="cg", newton_iters=0)
+        self.node, self.mo, _ = add_tissue(self.root, **tissue_kw)
+        Sofa.Simulation.init(self.root)
+
+    def force(self, x):
+        self.mo.position.value = x
+        Sofa.Simulation.animate(self.root, self.root.dt.value)
+        return self.mo.force.array().copy()
+
+    def K_times(self, x, v, eps=1e-4):
+        return -(self.force(x + eps * v) - self.force(x)) / eps
 
 
 def make_root(gravity=(0.0, 0.0, 0.0), dt=0.01):
