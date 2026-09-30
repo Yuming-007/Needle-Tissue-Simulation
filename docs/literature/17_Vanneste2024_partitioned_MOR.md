@@ -1,7 +1,7 @@
 # Vanneste, Martin, Goury, Courtecuisse, Pernod, Cotin, Duriez 2024 — Towards Realistic Needle Insertion Training Simulator Using Partitioned Model Order Reduction
 
 - **出处**：MICCAI 2024（LNCS，doi 10.1007/978-3-031-72089-5_62）。HAL hal-04717755，CC BY 4.0。INRIA Lille（DEFROST）+ INRIA Strasbourg + **InfinyTech3D**（Erik Pernod，也就是 CollisionAlgorithm 插件的维护方）
-- **本地文件**：`~/Downloads/extra_papers/A4_Vanneste2024_MICCAI_partitioned_MOR.pdf`
+- **本地文件**：`~/sofa/papers/extra/A4_Vanneste2024_MICCAI_partitioned_MOR.pdf`
 - **阅读状态**：全文精读；**2026-09-30 用原文文本核对了关键数值和结论**（见文末）
 - **在本项目中的地位**：**在 SOFA + 开源 ModelOrderReduction 插件里实现的**"针道附近用全阶精细网格、其他地方降阶"。是本项目**提速的主要候选方案**之一，特别适合规划（候选轨迹已知）。
 

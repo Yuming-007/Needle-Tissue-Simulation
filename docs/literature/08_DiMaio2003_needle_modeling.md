@@ -1,7 +1,7 @@
 # DiMaio & Salcudean 2003 — Needle Insertion Modeling and Simulation
 
 - **出处**：IEEE Trans. Robotics and Automation 19(5), 2003, pp. 864–875。UBC（早先的版本发表在 ICRA 2002、IEEE-VR Haptics 2002、MICCAI 2002）
-- **本地文件**：`~/Downloads/Needle_insertion_modeling_and_simulation.pdf`
+- **本地文件**：`~/sofa/papers/original/Needle_insertion_modeling_and_simulation.pdf`
 - **阅读状态**：全文精读（含附录）；**2026-09-30 对照原文核对**，补充 3 处（见文末）
 - **在本项目中的地位**：**开创性工作**。第一次通过组织形变测量，**反推出沿针身分布的力**；也给出了早期的 FEM 缩聚（condensation）实时仿真。Duriez 2009 引用它作为"需要重划网格或 FEM"的前人工作。
 

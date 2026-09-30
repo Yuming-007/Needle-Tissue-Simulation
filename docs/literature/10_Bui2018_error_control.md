@@ -1,7 +1,7 @@
 # Bui, Tomar, Courtecuisse, Cotin, Bordas 2018 — Real-Time Error Control for Surgical Simulation
 
 - **出处**：IEEE TBME 65(3), 2018, pp. 596–607，CC BY 3.0。作者单位：卢森堡大学、斯特拉斯堡大学（CNRS）、INRIA、卡迪夫大学
-- **本地文件**：`~/Downloads/Real-Time_Error_Control_for_Surgical_Simulation.pdf`
+- **本地文件**：`~/sofa/papers/original/Real-Time_Error_Control_for_Surgical_Simulation.pdf`
 - **阅读状态**：全文精读；**2026-09-30 对照原文核对（第 2–4、8–11 页），没有发现错误**，补充 3 处（见文末）
 - **在本项目中的地位**：**在 SOFA 里实现的**针插入加上 a posteriori 误差驱动的自适应网格加密。它的价值在于**区分离散误差和建模误差**，并展示了**网格分辨率对针插入力的影响有多大**（这个结论对我们非常重要）。代码没有开源。
 

@@ -1,7 +1,7 @@
 # Perrusi, Baksic, Courtecuisse 2021 — Interactive Finite Element Model of Needle Insertion and Laceration
 
 - **出处**：Eurographics 2021 Short Paper（4 页）。HAL hal-03187709。AVR / ICube, CNRS, Strasbourg
-- **本地文件**：`~/Downloads/extra_papers/A2_Baksic2021_needle_insertion_laceration.pdf`
+- **本地文件**：`~/sofa/papers/extra/A2_Baksic2021_needle_insertion_laceration.pdf`
 - **阅读状态**：全文精读；**2026-09-30 用原文文本核对了关键数值和结论**（见文末）
 - **在本项目中的地位**：**横向撕裂（laceration）的约束法模型**：针**横向**运动时切开组织。这让我们分清了"rupture"可能有的两种含义，是向 Manish 确认"rupture"定义时的重要参考。
 

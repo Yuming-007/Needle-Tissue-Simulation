@@ -1,7 +1,7 @@
 # Baksic, Courtecuisse, Duriez, Bayle 2020 — Robotic Needle Insertion in Moving Soft Tissues Using Constraint-Based Inverse Finite Element Simulation
 
 - **出处**：IEEE ICRA 2020, pp. 2407–2413。HAL hal-02503574。ICube Strasbourg + INRIA Lille DEFROST
-- **本地文件**：`~/Downloads/extra_papers/B1_Baksic2020_ICRA_moving_tissue_inverseFE.pdf`
+- **本地文件**：`~/sofa/papers/extra/B1_Baksic2020_ICRA_moving_tissue_inverseFE.pdf`
 - **阅读状态**：全文精读；**2026-09-30 用原文文本核对了关键数值和结论**（见文末）
 - **在本项目中的地位**：Adagolodjo 2019（笔记 14）的续作。关键贡献是：**把控制目标函数写成"虚拟约束"放进 H 矩阵里** → **Jacobian 完全在约束空间里算出来**，而且开销和网格规模无关。同时暴露了**直接仿真和逆向仿真不一致**带来的问题。
 

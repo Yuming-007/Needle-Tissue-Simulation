@@ -1,7 +1,7 @@
 # Okamura, Simone, O'Leary 2004 — Force Modeling for Needle Insertion Into Soft Tissue
 
 - **出处**：IEEE TBME 51(10), 2004, pp. 1707–1716。JHU（和 Manish 所在的实验室属于同一个 LCSR 体系）
-- **本地文件**：`~/Downloads/Force_modeling_for_needle_insertion_into_soft_tissue.pdf`
+- **本地文件**：`~/sofa/papers/original/Force_modeling_for_needle_insertion_into_soft_tissue.pdf`
 - **阅读状态**：全文精读（含表 I–III、图 1–11）；**2026-09-29 对照原文逐条核对**，改正 1 处、补充 3 处（见文末）
 - **在本项目中的地位**：**针插入力的经典分解模型和实验数据来源**。以后标定参数、做定性验证（力–深度曲线的形状），主要就靠它。Simone & Okamura 2002（笔记 06）是它的会议版前身。
 

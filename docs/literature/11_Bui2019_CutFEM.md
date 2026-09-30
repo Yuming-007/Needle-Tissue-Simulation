@@ -1,7 +1,7 @@
 # Bui, Tomar, Bordas 2019 — Corotational Cut Finite Element Method for Real-Time Surgical Simulation: Application to Needle Insertion Simulation
 
 - **出处**：Computer Methods in Applied Mechanics and Engineering 345 (2019) 183–211。作者单位：卢森堡大学、贝桑松大学、卡迪夫大学
-- **本地文件**：`~/Downloads/Corotational cut finite element method for real-time surgical-Application to needle insertion simulation.pdf`
+- **本地文件**：`~/sofa/papers/original/Corotational cut finite element method for real-time surgical-Application to needle insertion simulation.pdf`
 - **阅读状态**：全文精读（29 页，含全部图表）；**2026-09-30 对照原文核对（第 3–5、20–25 页）**，改正 1 处、补充 2 处（见文末）
 - **在本项目中的地位**：**在 SOFA 里实现的非贴合网格方法（CutFEM）**。对我们最有用的是：**用一个背景网格表达多种材料（内部界面不必和网格对齐）**。这正好适用于"一个立方体分成两种组织"和"多层组织"的建模。**没有开源。**
 

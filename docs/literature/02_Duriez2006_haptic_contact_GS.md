@@ -1,7 +1,7 @@
 # Duriez et al. 2006 — Realistic Haptic Rendering of Interacting Deformable Objects in Virtual Environments
 
 - **出处**：IEEE TVCG 12(1), 2006, pp. 36–47。作者：C. Duriez, F. Dubois, A. Kheddar, C. Andriot（CEA/LIST, LMGC Montpellier, AIST）
-- **本地文件**：`~/Downloads/Realistic_haptic_rendering_of_interacting_deformable_objects_in_virtual_environments.pdf`
+- **本地文件**：`~/sofa/papers/original/Realistic_haptic_rendering_of_interacting_deformable_objects_in_virtual_environments.pdf`
 - **阅读状态**：全文精读（含算法 1、图 1–18）；**2026-09-29 对照原文逐条核对，没有发现错误**
 - **在本项目中的地位**：**数值基础论文**。给出了 SOFA 约束求解的基本框架：Signorini + Coulomb 摩擦律、Delassus 算子、按接触分块的非线性 Gauss–Seidel 求解器。Duriez 2009 的所有针约束都建立在它的上面。
 

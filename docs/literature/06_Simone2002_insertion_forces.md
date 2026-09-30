@@ -1,7 +1,7 @@
 # Simone & Okamura 2002 — Modeling of Needle Insertion Forces for Robot-Assisted Percutaneous Therapy
 
 - **出处**：IEEE ICRA 2002, pp. 2085–2091。JHU CISST ERC（用的是 JHU Steady Hand Robot）
-- **本地文件**：`~/Downloads/Modeling_of_needle_insertion_forces_for_robot-assisted_percutaneous_therapy.pdf`
+- **本地文件**：`~/sofa/papers/original/Modeling_of_needle_insertion_forces_for_robot-assisted_percutaneous_therapy.pdf`
 - **阅读状态**：全文精读；**2026-09-29 对照原文核对**，补充 3 处（见文末）
 - **在本项目中的地位**：Okamura 2004（笔记 05）的**会议版前身**。力的分解框架相同，但**摩擦参数的结论不一样**，而且更强调在机器人上的应用（事件检测、"组织库"）。
 

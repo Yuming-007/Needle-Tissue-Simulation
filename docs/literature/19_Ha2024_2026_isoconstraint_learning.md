@@ -4,7 +4,7 @@
 2. **Real-time Robotic Needle Insertion in Deformable and Moving Structure Using Learning-by-Example Method**，ICRA 2026。HAL hal-05498156，CC BY-NC-SA 4.0
 
 - 作者：Thuc Long Ha（ICube Strasbourg）、Julien Bert（INSERM LaTIM Brest）、Hadrien Courtecuisse
-- **本地文件**：`~/Downloads/extra_papers/B2_IROS2024_isolated_objective_needle.pdf`、`B3_ICRA2026_learning_by_example_needle.pdf`
+- **本地文件**：`~/sofa/papers/extra/B2_IROS2024_isolated_objective_needle.pdf`、`B3_ICRA2026_learning_by_example_needle.pdf`
 - **阅读状态**：两篇都全文精读；**2026-09-30 用原文文本核对了关键数值和结论**（见文末）
 - **在本项目中的地位**：Adagolodjo 2019 → Baksic 2020 这条"**SOFA 逆向 FE 控制**"工作线的**最新两步**（2024–2026）。第 1 篇解决非线性目标函数的问题，第 2 篇**用神经网络代替逆向仿真**来提速 → 直接对应 Manish 说的"保证最终仿真的速度"和"用于闭环机器人控制"。
 

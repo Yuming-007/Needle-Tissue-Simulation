@@ -1,7 +1,7 @@
 # Martin, Zeng, Courtecuisse 2023 — Efficient Needle Insertion Simulation using Hybrid Constraint Solver and Isolated DOFs
 
 - **出处**：Eurographics 2023 Short Papers，4 页正文。作者：C. Martin, Z. Zeng, H. Courtecuisse（INRIA MIMESIS / ICube Strasbourg）。HAL hal-04181906，CC BY 4.0
-- **本地文件**：`~/Downloads/Efficient Needle Insertion Simulation using Hybrid.pdf`
+- **本地文件**：`~/sofa/papers/original/Efficient Needle Insertion Simulation using Hybrid.pdf`
 - **阅读状态**：全文精读（含图 1–6、表 1–2）；**2026-09-29 对照原文逐条核对**，补充 2 处（见文末）
 - **在本项目中的地位**：对 Duriez 2009 的两处改进：**约束点怎么定位**、**约束怎么求解**。Martin 2025 博士论文第 4 章的前身。
 

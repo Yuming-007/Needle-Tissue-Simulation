@@ -1,7 +1,7 @@
 # Martin 2025 博士论文 — Modeling and Resolution of Needle-Tissue Interactions for a Fast and Stable Haptic Rendering: Application to Hepatic Percutaneous Procedures
 
 - **出处**：Université de Strasbourg（ICube / INRIA MIMESIS），2025 年 12 月 4 日答辩。作者 Claire Martin，导师 Hadrien Courtecuisse。答辩委员：M. Marchal、F. Bello（报告人）、F. Zara、A. Lelevé、Y. Adagolodjo。HAL tel-05470170
-- **本地文件**：`~/Downloads/Modeling and Resolution of Needle-Tissue Interactions for a Fast and Stable Haptic Rendering.pdf`（196 页；PDF 页码 = 印刷页码 + 17）
+- **本地文件**：`~/sofa/papers/original/Modeling and Resolution of Needle-Tissue Interactions for a Fast and Stable Haptic Rendering.pdf`（196 页；PDF 页码 = 印刷页码 + 17）
 - **阅读状态**：第 1–8 章正文逐页精读（含全部公式、算法、图表）。第 9 章法语摘要和参考文献只浏览。**2026-09-29 对照原文核对了第 3–6 章；2026-09-30 补核第 2 章 §2.3.3–2.4.2（摩擦、穿刺、刚度力模型和求解器综述）**；第 7 章"组件私有"的结论是直接引用的原文，补充 4 处（见文末）
 - **在本项目中的地位**：Duriez 2009 这条路线**最新、最完整**的发展（2025 年）。对"约束怎么放、怎么解、为什么不稳定"讲得最透彻。**但核心代码没有开源**（§7.3.3）。
 

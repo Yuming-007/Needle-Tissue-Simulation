@@ -1,7 +1,7 @@
 # Baksic 2022 博士论文 — Commande robotique basée simulation pour l'assistance à la radiologie interventionnelle
 
 - **出处**：Université de Strasbourg（ICube AVR + INRIA MIMESIS），2022；导师 B. Bayle、H. Courtecuisse。HAL tel-03881361。171 页，法语。
-- **本地文件**：`~/Downloads/extra_papers/D1_Baksic2022_thesis.pdf`（PDF 页码 = 印刷页码 + 17）
+- **本地文件**：`~/sofa/papers/extra/D1_Baksic2022_thesis.pdf`（PDF 页码 = 印刷页码 + 17）
 - **阅读状态**：目录；第 3 章（印刷页 33–50）全部精读；第 6 章 §6.3.2–6.5（印刷页 106–116）精读；第 4 章的内容和 Baksic 2020 ICRA（笔记 18）重合，没有逐页重读；第 5 章（共享控制）没读。
 - **在本项目中的地位**：Strasbourg 这条工作线的**实现细节**，以及**真实系统里标定参数的方法**。
 

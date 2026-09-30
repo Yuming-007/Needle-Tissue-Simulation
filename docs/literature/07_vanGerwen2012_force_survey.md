@@ -1,7 +1,7 @@
 # van Gerwen, Dankelman, van den Dobbelsteen 2012 — Needle–tissue interaction forces: A survey of experimental data
 
 - **出处**：Medical Engineering & Physics 34 (2012) 665–680。TU Delft，生物力学工程系
-- **本地文件**：`~/Downloads/Needle–tissue interaction forces – A survey of.pdf`
+- **本地文件**：`~/sofa/papers/original/Needle–tissue interaction forces – A survey of.pdf`
 - **阅读状态**：全文精读（含表 1–3、图 1–13）；**2026-09-30 对照原文核对**，改正 1 处、补充 3 处（见文末）
 - **在本项目中的地位**：**实验数据的索引和"物理常识"**。汇总了 99 篇论文的力测量结果，可以用来：定参数的数量级、判断仿真结果是否合理、找针对某种组织的原始数据。**缺点**：没有给多层组织参数的汇总表（补充材料在网上）。
 

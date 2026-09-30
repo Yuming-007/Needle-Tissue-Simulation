@@ -1,7 +1,7 @@
 # Duriez et al. 2009 — Interactive Simulation of Flexible Needle Insertions Based on Constraint Models
 
 - **出处**：MICCAI 2009（LNCS），8 页。作者：C. Duriez, C. Guébert, M. Marchal, S. Cotin, L. Grisoni（INRIA Lille / Rennes，SOFA 核心团队）
-- **本地文件**：`~/Downloads/Interactive Simulation of Flexible Needle Insertions Based on Constraint Models.pdf`
+- **本地文件**：`~/sofa/papers/original/Interactive Simulation of Flexible Needle Insertions Based on Constraint Models.pdf`
 - **阅读状态**：全文精读（含图 1–8）；**2026-09-29 对照原文逐条核对**，改正 2 处（见文末核对记录）
 - **在本项目中的地位**：**核心方法论文**。SOFA 中针–组织交互的"标准模型"，CollisionAlgorithm / ConstraintGeometry 插件与 Martin 2023/2025 都是它的延续。
 

@@ -1,7 +1,7 @@
 # Wang, Al-Zogbi, Liu, Liu, Tokuda, Krieger, Iordachita 2024 — Bevel-Tip Needle Deflection Modeling, Simulation, and Validation in Multi-Layer Tissues
 
 - **出处**：IEEE ICRA 2024（不是 IROS）；arXiv 2311.18075。JHU LCSR（Iordachita、Krieger）+ 佛罗里达大学 + 哈佛 BWH
-- **本地文件**：`~/Downloads/extra_papers/A3_Wang2024_ICRA_bevel_multilayer.pdf`
+- **本地文件**：`~/sofa/papers/extra/A3_Wang2024_ICRA_bevel_multilayer.pdf`
 - **阅读状态**：全文精读；**2026-09-30 用原文文本核对了关键数值和结论**（见文末）
 - **在本项目中的地位**：**Wang 2025 RA-L（笔记 12）所用仿真器的模型论文**。证实了我之前的推测：**组织不是体网格 FE**，而是沿针身分布的**非线性弹簧**（Winkler 地基型）。提供了**多层组织仿体的实验数据**，同时**直接批评了 SOFA 方案缺乏模型验证** → 这可能是本项目的一个贡献点。
 

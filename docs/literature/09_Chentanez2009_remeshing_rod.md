@@ -1,7 +1,7 @@
 # Chentanez et al. 2009 — Interactive Simulation of Surgical Needle Insertion and Steering
 
 - **出处**：ACM SIGGRAPH 2009（ACM TOG）。作者：N. Chentanez, R. Alterovitz, D. Ritchie, L. Cho, K. Hauser, K. Goldberg, J. R. Shewchuk, J. F. O'Brien（UC Berkeley / UNC）。和 JHU 的 Okamura、Webster、Cowan 有合作（实验数据来自 JHU）
-- **本地文件**：`~/Downloads/Interactive Simulation of Surgical Needle Insertion and Steering.pdf`
+- **本地文件**：`~/sofa/papers/original/Interactive Simulation of Surgical Needle Insertion and Steering.pdf`
 - **阅读状态**：全文精读（含算法 1–3、表 1–3）；**2026-09-30 对照原文核对，没有发现错误**，补充 2 处（见文末）
 - **在本项目中的地位**：**和约束法并列的另一条路线**：局部重划网格 + 3D FEM 与 1D 不可伸长杆耦合。已经用于**规划和反馈控制**（Hauser 2009 RSS）。它的**斜面针尖模型**和**摩擦 LCP** 值得借鉴。
 

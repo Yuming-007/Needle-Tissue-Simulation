@@ -1,7 +1,7 @@
 # Adagolodjo, Goffin, de Mathelin, Courtecuisse 2019 — Robotic Insertion of Flexible Needle in Deformable Structures Using Inverse Finite-Element Simulation
 
 - **出处**：IEEE Trans. Robotics 35(3), 2019, pp. 697–708。HAL hal-02144487，CC BY 4.0。ICube / CNRS / Strasbourg（AVR 组 + MIMESIS）。IROS 2016 版本见 `B4_Adagolodjo2016_IROS_inverseFE.pdf`（只在仿真中验证）
-- **本地文件**：`~/Downloads/extra_papers/A1_Adagolodjo2019_TRO_inverseFE_flexible_needle.pdf`
+- **本地文件**：`~/sofa/papers/extra/A1_Adagolodjo2019_TRO_inverseFE_flexible_needle.pdf`
 - **阅读状态**：全文精读；**2026-09-30 用原文文本核对了关键数值和结论**（见文末）
 - **在本项目中的地位**：⭐⭐⭐ **最直接的先例**：**基于 SOFA 的柔性针插入 FE 仿真 + 机器人闭环控制**，用真实机器人（Mitsubishi RV1A 6 自由度）做了实验。和 Manish 的"仿真 + 闭环机器人控制"完全是同一类问题。第一作者 Adagolodjo 后来是 Martin 论文的答辩委员。**组织和针的模型、交互约束和 CollisionAlgorithm 属于同一个体系**。
 

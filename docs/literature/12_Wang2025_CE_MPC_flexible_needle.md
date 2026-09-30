@@ -1,7 +1,7 @@
 # Wang, Chang, Mei, Leonard, Taylor, Iordachita 2025 — High-Precision Autonomous Control of Flexible Needles via Real-Time FE Simulation and Cross-Entropy Optimization
 
 - **出处**：IEEE RA-L 10(10), 2025, pp. 10578–10585。JHU LCSR（Iordachita、Taylor），**和 Manish 在同一个实验室体系**
-- **本地文件**：`~/Downloads/High-Precision_Autonomous_Control_of_Flexible_Needles_via_Real-Time_Finite_Element_Simulation_and_Cross-Entropy_Optimization.pdf`
+- **本地文件**：`~/sofa/papers/original/High-Precision_Autonomous_Control_of_Flexible_Needles_via_Real-Time_Finite_Element_Simulation_and_Cross-Entropy_Optimization.pdf`
 - **阅读状态**：全文精读；**2026-09-30 对照原文核对（第 2–7 页），没有发现错误**，补充 3 处（见文末）
 - **在本项目中的地位**：**代表 Manish 的最终目标（规划 + 闭环机器人控制）在本实验室的现状**。它告诉我们：仿真器要**给控制器提供什么接口**、**速度要多快**、需要**哪些输出**。它用的是**2D 自研 FE 仿真器**，不是 SOFA。
 

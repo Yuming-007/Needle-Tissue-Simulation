@@ -1,7 +1,7 @@
 # Ishida, Galaiya, Nagururu, Creighton, Kazanzides, Taylor, Sahu 2024 — Beyond the manual touch: situational-aware force control for increased safety in robot-assisted skullbase surgery
 
 - **出处**：IJCARS 19 (2024) 1273–1280。JHU LCSR + 耳鼻喉科。**通讯作者 Manish Sahu（本项目的导师）**
-- **本地文件**：`~/Downloads/Situational-aware Force Control for Increased Safety in Robot-assisted Skullbase Surgery.pdf`
+- **本地文件**：`~/sofa/papers/original/Situational-aware Force Control for Increased Safety in Robot-assisted Skullbase Surgery.pdf`
 - **阅读状态**：全文精读；**2026-09-30 对照原文核对（第 2–6 页），没有发现错误**，补充 2 处（见文末）
 - **在本项目中的地位**：**和针插入没有直接的技术关系**。它的价值在于让我们了解 **Manish 组的研究范式**：**数字孪生（digital twin）+ 按解剖结构区分的上下文 + 机器人控制**。可以推测 Manish 希望针插入仿真器最终也成为这类数字孪生的一部分。
 
