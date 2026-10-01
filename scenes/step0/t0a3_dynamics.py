@@ -66,9 +66,9 @@ def static_bodyforce(g):
     return mo.position.array().copy()
 
 
-def dyn_scene(dt, rm=0.0, rs=0.0, punch=False):
+def dyn_scene(dt, rm=0.0, rs=0.0, punch=False, linear="ldl"):
     root = common.make_root(dt=dt)
-    common.add_dynamic_solver(root, rayleigh_mass=rm, rayleigh_stiffness=rs)
+    common.add_dynamic_solver(root, rayleigh_mass=rm, rayleigh_stiffness=rs, linear=linear)
     t, mo, _ = common.add_tissue(root, L=L, n=N, E=E, nu=NU, rho=RHO)
     t.addObject("FixedProjectiveConstraint", indices=BOT.tolist())
     if punch:
@@ -106,8 +106,8 @@ def period_zero_cross(t, u):
     return 2 * np.mean(np.diff(tc[:6])) if len(tc) >= 3 else float("nan"), tc
 
 
-def quasi_static(v, dt, delta_max, t_hold, delta_tab, F_tab, rm=0.0, rs=0.0):
-    root, mo = dyn_scene(dt, rm, rs, punch=True)
+def quasi_static(v, dt, delta_max, t_hold, delta_tab, F_tab, rm=0.0, rs=0.0, linear="ldl"):
+    root, mo = dyn_scene(dt, rm, rs, punch=True, linear=linear)
     n_load = int(round(delta_max / v / dt))
     n_hold = int(round(t_hold / dt))
     vel = np.zeros_like(X); vel[PUNCH, 2] = -v

@@ -105,6 +105,9 @@ def add_dynamic_solver(node, rayleigh_mass=0.0, rayleigh_stiffness=0.0, linear="
     if linear == "eigen":
         node.addObject("EigenSimplicialLDLT", name="linsolver",
                        template="CompressedRowSparseMatrixMat3x3d")
+    elif linear == "async":   # 0d 的 R3：另一个线程做分解，求解用上一次完成的分解
+        node.addObject("AsyncSparseLDLSolver", name="linsolver",
+                       template="CompressedRowSparseMatrixMat3x3d")
     else:
         node.addObject("SparseLDLSolver", name="linsolver",
                        template="CompressedRowSparseMatrixMat3x3d")
@@ -171,7 +174,7 @@ def quat_to_mat(q):
                      [2 * (x * z - y * w), 2 * (y * z + x * w), 1 - 2 * (x * x + y * y)]])
 
 
-def add_kinematic_needle(parent, length=0.10, n_body=21, name="Needle", pose0=None):
+def add_kinematic_needle(parent, length=0.10, n_body=21, name="Needle", pose0=None, local_points=None):
     """纯运动学的刚性针（0b 方案 C）：一个 Rigid3 节点，没有 ODE 求解器，也没有 ConstraintCorrection。
 
     局部坐标：针根在原点，针轴沿局部 -z，针尖在 (0, 0, -length)。
@@ -183,7 +186,10 @@ def add_kinematic_needle(parent, length=0.10, n_body=21, name="Needle", pose0=No
     p0, q0 = (np.zeros(3), np.array([0, 0, 0, 1.0])) if pose0 is None else (np.asarray(pose0[0], float), np.asarray(pose0[1], float))
     nd = parent.addChild(name)
     base = nd.addObject("MechanicalObject", name="base", template="Rigid3d", position=[np.r_[p0, q0].tolist()])
-    local = np.stack([np.zeros(n_body), np.zeros(n_body), -np.linspace(0, length, n_body)], 1)
+    if local_points is None:
+        local = np.stack([np.zeros(n_body), np.zeros(n_body), -np.linspace(0, length, n_body)], 1)
+    else:                                   # 自定义针身点（局部坐标），例如和组织里的约束点一一对应
+        local = np.asarray(local_points, float)
     body_node = nd.addChild("Body")
     body = body_node.addObject("MechanicalObject", name="dofs", template="Vec3d", position=local.tolist())
     body_node.addObject("RigidMapping", input="@../base", output="@dofs", globalToLocalCoords=False)
@@ -281,10 +287,12 @@ def needle_wrench(child_mos, lam, dt, p_base):
     return F, tau, per
 
 
-def make_root(gravity=(0.0, 0.0, 0.0), dt=0.01, loop="default"):
+def make_root(gravity=(0.0, 0.0, 0.0), dt=0.01, loop="default", root=None):
     """loop="default"：DefaultAnimationLoop（静力、无约束动力学）；
-    loop="free"：FreeMotionAnimationLoop + BlockGaussSeidelConstraintSolver（拉格朗日约束，第 1 步要用的配置）。"""
-    root = Sofa.Core.Node("root")
+    loop="free"：FreeMotionAnimationLoop + BlockGaussSeidelConstraintSolver（拉格朗日约束，第 1 步要用的配置）。
+    root：给定时（例如 runSofa 的 createScene 传进来的根节点）就在它上面设置，否则新建。"""
+    if root is None:
+        root = Sofa.Core.Node("root")
     root.gravity = list(gravity)
     root.dt = dt
     if loop == "free":
