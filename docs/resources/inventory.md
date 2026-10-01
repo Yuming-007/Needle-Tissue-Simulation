@@ -118,3 +118,56 @@
 
 ---
 **阶段 2 更新（2026-09-30）**：详细的代码结论和运行验证见 `docs/code/01_needle_plugins_v25.12.md`。最重要的两条：①`frictionCoeff` 实际是 GS 的欠松弛因子，摩擦是求解器没收敛的数值副产品；②（已纠正）穿刺阈值换算本身没错；官方场景把针设成一阶、组织是二阶，同一个 λ 在针一侧是力、在组织一侧是冲量，所以针根的力只有组织受力的 dt 倍（作用力 ≠ 反作用力）。
+
+---
+
+## 补充搜索（2026-09-30，进入第 1 步之前）：加密网格、已验证的场景、公开的验证数据
+用户要求：查一下有没有别人已经验证过、可以直接用的资源，特别是加密好的组织网格和验证数据。下面所有条目都核对过来源页面；没有下载任何文件。
+
+### 1. 公开的验证数据（最有价值）
+- **TU Delft：针插入两个离体人肝脏的力测量数据集**（de Jong, Dankelman, van den Dobbelsteen, *Data in Brief* 11:308–310, 2017，doi:10.1016/j.dib.2017.01.018；数据在 Mendeley Data，doi:10.17632/94s7xd9mzt.2，**CC BY 许可**）〔原文：PMC5498459 页面〕
+  - 18 G 套管针（trocar），三角形针尖；**恒速 5 mm/s** 插入和拔出；
+  - 插入深度约 70 mm（整个肝脏厚度）；共 39 次插入（两个肝脏各约 20 次，间距 ≥ 10 mm）；
+  - **针座的轴向力**，1 kHz 采样，原始未滤波；每次插入的数据包括力 [N]、位置 [mm]、时间 [s]；MATLAB 格式（.mat/.m/.fig），附带基础分析代码；
+  - 肝脏包埋在 10 m% 明胶里：针先穿过明胶、再进入肝脏，天然是两层组织。
+  - 对我们的用途：速度、测量量（针座轴向力–位置）和我们的设计完全对应，可以作为第 2–5 步（刺穿、摩擦、切割）定性形状和量级比较的数据，也可以用于第 7 步（多层组织）。注意：肝脏的几何和材料参数需要另外估计，数据本身不含这些。
+- 已在资源清单中的：JHU 多层 plastisol 仿体（Wang 2024 / 2025 的配方和参数）、Okamura 2004 / DiMaio 2003 的文献曲线。
+
+### 2. 已验证的 SOFA 插针场景
+- 没有找到公开的、和实验做过定量对比的 SOFA 插针场景。能找到的是：
+  - Cosserat 插件的插针示例（学习阶段已编译运行过，`docs/code/03`）；
+  - InfinyTech3D CollisionAlgorithm 的官方场景（学习阶段已逐行分析，`docs/code/01`）；
+  - SOFA 论坛上一个插针帖子（罚函数接触 + `LocalMinDistance`，只调了接触参数，没有验证）。
+- 结论：针–组织交互机制的验证仍然要我们自己做，这和此前的判断一致。
+
+### 3. 加密网格的工具和做法
+- **gmsh**（开源）的尺寸场（Distance + Threshold）：距离给定几何（点、线，例如针道）≤ DistMin 时单元尺寸为 SizeMin，≥ DistMax 时为 SizeMax，中间线性插值，过渡带自动生成。有 Python API（官方教程 t10）。本机没有安装（`pip install --user gmsh`）。SOFA 的 `MeshGmshLoader` 可以直接读 .msh。→ **第 4.5 步的首选工具**。
+- SOFA 的 Tetrahedral Mesh Tool（QTetraMesher，GPL v3）：Delaunay（CGAL）和 isosurface stuffing 两种四面体化方法；**文档没有提到局部尺寸控制**，不适合按针道加密。
+- 文献中的做法：
+  - Chentanez 2009：针经过时局部重新划分网格，让节点落在曲线针道上（前列腺网格 13,375 个四面体、2,763 个顶点，25 Hz）；
+  - Goksel 2005 / 2006：在粗网格上用节点重定位 / 节点增加实现针–组织耦合，用 Woodbury 公式加速，触觉频率 > 1 kHz。
+  - 这两种都是动态改网格，工作量远大于静态加密，不在两个月的范围内。我们用的是重心坐标约束（不需要节点落在针道上），配合静态加密网格。
+- 非实时的详细有限元研究（Abaqus 等）的通常做法：接触区附近应变能密度梯度大，所以近处细、远处粗，并做网格收敛测试（例如最小单元 ≈ 0.5 倍针尖尺寸）。这些模型的单元比我们实时预算允许的细得多，只能作为方法参考，不能照搬数值。
+
+### 4. 对计划的影响
+- 第 4.5 步（非均匀网格）：用 gmsh 的 Distance + Threshold 尺寸场生成，管半径、细单元尺寸、过渡距离由收敛测试和节点预算决定；需要先征得用户同意安装 gmsh。
+- 验证数据：TU Delft 数据集可以在第 2 步之后用来做定性和量级比较；下载前征得用户同意。
+
+### 补充（2026-10-01）：SOFA 官方的 probe–tissue interaction 教程，以及现成网格
+- **教程**：Eleonora Tagliabue（Verona 大学 Altair 实验室），https://www.sofa-framework.org/applications/plugins/tutorial-probe-tissue-interaction/ ，代码 https://gitlab.com/altairLab/probe-tissue-simulation （已浅克隆到 `~/sofa/resources/altairLab_probe-tissue-simulation`，分支 sofapython3，commit dc8116e，2022-07；只读）。论文：Tagliabue et al., "Biomechanical modelling of probe to tissue interaction during ultrasound scanning", IJCARS 2020。
+  - README：同一个"超声探头压乳房组织"的场景，原本有罚函数、约束（拉格朗日乘子）、直接给定表面位移三种实现；SofaPython3 分支只实现了约束法。测试过的版本是 SOFA 21.12 / 22.06（`GenericConstraintSolver` 在 v25.12 里已经不能直接创建，要换成 `BlockGaussSeidelConstraintSolver` 等）。**README 没有写许可证**：只读学习，不直接拷贝代码。
+  - 关键设计〔代码〕：
+    - 探头是没有求解器、没有 ConstraintCorrection 的 Rigid3 物体，由控制器设定位姿，和我们 0b 的纯运动学针相同；
+    - 组织碰撞用单独的低分辨率表面（`breast_500.stl`）经 `BarycentricMapping` 挂在体网格上；
+    - 接触用 SOFA 自带的碰撞流水线（`MinProximityIntersection` / `LocalMinDistance`，三角形、线、点碰撞模型），`alarm_distance` = 2 mm，`contact_distance` = 1 mm，dt = 0.02 s；
+    - 材料 NeoHookean，E = 2850 Pa，ν = 0.49；`inData/ground_truth/` 里有两个肿瘤在 4 级压深下的实测位置，是一套实验对照数据。
+  - 网格〔运行：读 .msh 统计〕：`breast_13k.msh` 有 2469 个节点、9295 个四面体，单元平均边长中位数 8.6 mm（5%–95% 分位 5–11 mm），基本均匀，不是加密网格。
+  - **对我们的价值**：
+    - ① 第 1 步 A2（SOFA 自带接触）交叉验证的现成参考配置：接触距离怎么取、碰撞表面怎么挂；
+    - ② "约束 vs 罚函数 vs 直接给定位移"的对比思路，和我们"接触 vs 给定位移"的验证一致；
+    - ③ 面接触（探头端面）的做法，可以参考用于以后的多点针尖。
+  - **局限**：没有刺穿和插入；面积大的探头接触和针尖点接触不同；SOFA 版本较旧。
+- **现成网格**：
+  - 均匀的组织 / 器官网格是有的：SOFA 自带（`share/sofa/mesh` 下的 liver、cube 等）、上面这个乳房网格、各种器官或仿体的几何数据集。
+  - **没有找到可以直接下载的沿针道加密的网格**。文献里这类网格都是针对具体针道生成或动态调整的（Chentanez 2009 局部重新划分网格；Bui 等用误差估计实时自适应加密，arXiv 1704.07636，和文献笔记 `10_Bui2018` 同一系列）。
+  - 原因〔推论〕：加密网格取决于针道位置、组织几何和节点预算，本来就是"针对问题生成"的东西。可复用的是**工具（gmsh）和方法（距离 / 误差驱动的尺寸场）**，不是某个具体网格。

@@ -40,7 +40,7 @@ def grid_nodes(L, n, origin=(0.0, 0.0, 0.0)):
 
 
 def add_tissue(parent, L=0.08, n=9, E=5000.0, nu=0.3, rho=1000.0, method="polar",
-               name="Tissue", origin=(0.0, 0.0, 0.0), ff_type="FTCfix"):
+               name="Tissue", origin=(0.0, 0.0, 0.0), ff_type="FTCfix", swapping=False):
     """8 cm 立方体（默认），n×n×n 节点的规则网格切成四面体，共旋线弹性。
 
     parent 节点下不放求解器，由调用者决定（静力 / 动力）。
@@ -54,8 +54,10 @@ def add_tissue(parent, L=0.08, n=9, E=5000.0, nu=0.3, rho=1000.0, method="polar"
     t.addObject("TetrahedronSetTopologyContainer", name="topo",
                 position="@../%sGrid/hexa.position" % name)
     t.addObject("TetrahedronSetTopologyModifier", name="modifier")
+    # swapping=True：相邻六面体的切分方向交替（见 step1 结果：swapping=False 时网格不对称，
+    # 中心节点受竖直点载荷会侧向漂移约 24%）
     t.addObject("Hexa2TetraTopologicalMapping", input="@../%sGrid/hexa" % name,
-                output="@topo", swapping=False)
+                output="@topo", swapping=swapping)
     mo = t.addObject("MechanicalObject", name="dofs", template="Vec3d")
     # 质量：静力测试不用，但动力测试需要；密度 × 体积
     t.addObject("MeshMatrixMass", name="mass", massDensity=rho, topology="@topo")
@@ -212,6 +214,24 @@ def rotvec_from_quat(q):
     if s < 1e-15:
         return 2 * q[:3]
     return 2 * np.arctan2(s, q[3]) * q[:3] / s
+
+
+def add_needle_visual(nd, length, radius=0.0008, segments=12, color=(0.25, 0.25, 0.3, 1.0)):
+    """给纯运动学针加显示模型：一根圆柱（局部坐标从针根 (0,0,0) 到针尖 (0,0,-length)），
+    用 RigidMapping 挂在针根刚体上。只用于显示，不参与力学和接触。
+    放在单独的子节点里（一个节点只允许一个状态对象 / 映射，见 step1_results.md 发现 8）。"""
+    ang = np.linspace(0, 2 * np.pi, segments, endpoint=False)
+    ring = np.stack([radius * np.cos(ang), radius * np.sin(ang)], 1)
+    pts = [[x, y, 0.0] for x, y in ring] + [[x, y, -length] for x, y in ring] + [[0, 0, 0.0], [0, 0, -length]]
+    tris = []
+    for i in range(segments):
+        j = (i + 1) % segments
+        tris += [[i, j, segments + j], [i, segments + j, segments + i]]          # 侧面
+        tris += [[2 * segments, j, i], [2 * segments + 1, segments + i, segments + j]]  # 两个端面
+    v = nd.addChild("Visual")
+    v.addObject("OglModel", name="visual", position=pts, triangles=tris, color=list(color))
+    v.addObject("RigidMapping", input="@../base", output="@visual", globalToLocalCoords=False)
+    return v
 
 
 class NeedleDriver(Sofa.Core.Controller):

@@ -1,0 +1,33 @@
+全模型 h=10.0mm 节点    729 压深  1.0mm：F = 0.0729 N，割线刚度   72.94 N/m，最差单元体积比 0.980，ConvergedAbsoluteResidual，0.1 s
+全模型 h=10.0mm 节点    729 压深  5.0mm：F = 0.3227 N，割线刚度   64.54 N/m，最差单元体积比 0.848，ConvergedAbsoluteResidual，0.2 s
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+全模型 h=10.0mm 节点    729 压深 10.0mm：F = 0.5178 N，割线刚度   51.78 N/m，最差单元体积比 0.527，ConvergedAbsoluteResidual，0.3 s
+全模型 h= 5.0mm 节点   4913 压深  1.0mm：F = 0.0362 N，割线刚度   36.16 N/m，最差单元体积比 0.954，ConvergedAbsoluteResidual，9.3 s
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+全模型 h= 5.0mm 节点   4913 压深  5.0mm：F = 0.1307 N，割线刚度   26.15 N/m，最差单元体积比 0.519，ConvergedAbsoluteResidual，20.8 s
+全模型 h= 5.0mm 节点   4913 压深 10.0mm：F = 0.1715 N，割线刚度   17.15 N/m，最差单元体积比 -0.644，ConvergedAbsoluteResidual，14.6 s
+四分之一 h=10.0mm 节点    225 压深  1.0mm：F = 0.0729 N，割线刚度   72.94 N/m，最差单元体积比 0.980，ConvergedAbsoluteResidual，0.0 s
+四分之一 h=10.0mm 节点    225 压深  2.0mm：F = 0.1420 N，割线刚度   70.98 N/m，最差单元体积比 0.955，ConvergedAbsoluteResidual，0.0 s
+四分之一 h=10.0mm 节点    225 压深  5.0mm：F = 0.3227 N，割线刚度   64.54 N/m，最差单元体积比 0.848，ConvergedAbsoluteResidual，0.0 s
+四分之一 h= 5.0mm 节点   1377 压深  1.0mm：F = 0.0362 N，割线刚度   36.16 N/m，最差单元体积比 0.954，ConvergedAbsoluteResidual，0.3 s
+四分之一 h= 5.0mm 节点   1377 压深  2.0mm：F = 0.0679 N，割线刚度   33.97 N/m，最差单元体积比 0.888，ConvergedAbsoluteResidual，0.3 s
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+[WARNING] [Decompose] polarDecomposition: zero determinant encountered.
+四分之一 h= 5.0mm 节点   1377 压深  5.0mm：F = 0.1307 N，割线刚度   26.15 N/m，最差单元体积比 0.519，ConvergedAbsoluteResidual，0.6 s
+四分之一 h= 2.5mm 节点   9537 压深  1.0mm：F = 0.0170 N，割线刚度   17.00 N/m，最差单元体积比 0.887，ConvergedAbsoluteResidual，46.1 s
+四分之一 h= 2.5mm 节点   9537 压深  2.0mm：F = 0.0290 N，割线刚度   14.48 N/m，最差单元体积比 0.675，ConvergedAbsoluteResidual，60.7 s
+四分之一 h= 2.5mm 节点   9537 压深  5.0mm：F = 0.0427 N，割线刚度    8.55 N/m，最差单元体积比 -0.644，ConvergedAbsoluteResidual，51.7 s
