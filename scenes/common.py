@@ -149,9 +149,148 @@ class ForceProbe:
         return -(self.force(x + eps * v) - self.force(x)) / eps
 
 
-def make_root(gravity=(0.0, 0.0, 0.0), dt=0.01):
+def quat_from_axis_angle(axis, angle):
+    """SOFA 的四元数顺序是 [x, y, z, w]。"""
+    a = np.asarray(axis, float); a = a / np.linalg.norm(a)
+    return np.r_[np.sin(angle / 2) * a, np.cos(angle / 2)]
+
+
+def quat_mul(q1, q2):
+    """四元数乘法 q1*q2（[x, y, z, w] 顺序），表示先转 q2 再转 q1。"""
+    x1, y1, z1, w1 = q1; x2, y2, z2, w2 = q2
+    return np.array([w1 * x2 + x1 * w2 + y1 * z2 - z1 * y2,
+                     w1 * y2 - x1 * z2 + y1 * w2 + z1 * x2,
+                     w1 * z2 + x1 * y2 - y1 * x2 + z1 * w2,
+                     w1 * w2 - x1 * x2 - y1 * y2 - z1 * z2])
+
+
+def quat_to_mat(q):
+    x, y, z, w = q
+    return np.array([[1 - 2 * (y * y + z * z), 2 * (x * y - z * w), 2 * (x * z + y * w)],
+                     [2 * (x * y + z * w), 1 - 2 * (x * x + z * z), 2 * (y * z - x * w)],
+                     [2 * (x * z - y * w), 2 * (y * z + x * w), 1 - 2 * (x * x + y * y)]])
+
+
+def add_kinematic_needle(parent, length=0.10, n_body=21, name="Needle", pose0=None):
+    """纯运动学的刚性针（0b 方案 C）：一个 Rigid3 节点，没有 ODE 求解器，也没有 ConstraintCorrection。
+
+    局部坐标：针根在原点，针轴沿局部 -z，针尖在 (0, 0, -length)。
+    子节点 Body：n_body 个针身点（含针根和针尖），Tip：针尖点；都用 RigidMapping 挂在针根刚体上。
+    pose0 = (p[3], q[4])：初始位姿，应等于轨迹在 t = 0 的位姿（否则第一步会有一次姿态跳变，
+    映射的雅可比在那一步是错的，见 0b-1）。子节点坐标按局部坐标给出（globalToLocalCoords=False）。
+    位姿由 NeedleDriver 控制器每步设定。返回 (needle 节点, 针根 MO, 针身 MO, 针尖 MO, 局部坐标数组)。
+    """
+    p0, q0 = (np.zeros(3), np.array([0, 0, 0, 1.0])) if pose0 is None else (np.asarray(pose0[0], float), np.asarray(pose0[1], float))
+    nd = parent.addChild(name)
+    base = nd.addObject("MechanicalObject", name="base", template="Rigid3d", position=[np.r_[p0, q0].tolist()])
+    local = np.stack([np.zeros(n_body), np.zeros(n_body), -np.linspace(0, length, n_body)], 1)
+    body_node = nd.addChild("Body")
+    body = body_node.addObject("MechanicalObject", name="dofs", template="Vec3d", position=local.tolist())
+    body_node.addObject("RigidMapping", input="@../base", output="@dofs", globalToLocalCoords=False)
+    tip_node = nd.addChild("Tip")
+    tip = tip_node.addObject("MechanicalObject", name="dofs", template="Vec3d", position=[[0, 0, -length]])
+    tip_node.addObject("RigidMapping", input="@../base", output="@dofs", globalToLocalCoords=False)
+    return nd, base, body, tip, local
+
+
+def quat_inv(q):
+    return np.array([-q[0], -q[1], -q[2], q[3]]) / np.dot(q, q)
+
+
+def rotvec_from_quat(q):
+    """单位四元数 → 转动向量（轴 × 角）。"""
+    q = q / np.linalg.norm(q)
+    if q[3] < 0:
+        q = -q
+    s = np.linalg.norm(q[:3])
+    if s < 1e-15:
+        return 2 * q[:3]
+    return 2 * np.arctan2(s, q[3]) * q[:3] / s
+
+
+class NeedleDriver(Sofa.Core.Controller):
+    """每步开始时（AnimateBeginEvent）设定纯运动学针的位姿。
+
+    trajectory(t) 返回 (位置 p[3], 四元数 q[4], ...)，世界坐标；速度由相邻两步的位姿差分得到（步内平均速度）。
+    mode="end"：  pos = 指令(t_{n+1})，freeVel = 0       → freePos = 指令(t_{n+1})（精确）
+    mode="start"：pos = 指令(t_n)，  freeVel = 步内平均速度 → freePos = pos + freeVel·dt（转动时是一阶近似）
+    依据〔代码〕：FreeMotionAnimationLoop.cpp:417 对所有状态（包括映射的子节点）计算 freePos = pos + freeVel·dt；
+          没有求解器的物体，freeVel 不会被自由运动更新（:406-411）。
+    子节点必须同时写入〔运行，0b-1〕：子节点的 position 要到一步末尾（:291 propagateXAndV）才由映射更新，
+          而 :417 用的是子节点当时的 position，所以只改针根时，子节点的 freePos 会落后一步。
+          因此这里按刚体公式 x_i = p + R r_i 直接写入 children = [(子节点 MO, 局部坐标), ...]。
+          映射仍然负责把力从子节点传回针根（applyJT）。
+    时间用步数 k·dt 计算（避免累加误差）。
+    """
+
+    def __init__(self, base, trajectory, dt, children=(), mode="end", **kw):
+        super().__init__(**kw)
+        self.base, self.traj, self.dt, self.mode, self.k = base, trajectory, dt, mode, 0
+        self.children = list(children)
+
+    def _set(self, p, q, v, w):
+        self.base.position.value = [np.r_[p, q].tolist()]
+        self.base.velocity.value = [np.r_[v, w].tolist()]
+        self.base.free_velocity.value = [np.r_[v, w].tolist()]
+        R = quat_to_mat(q)
+        for mo, local in self.children:
+            x = p + local @ R.T
+            vx = v + np.cross(w, local @ R.T)
+            mo.position.value = x
+            mo.velocity.value = vx
+            mo.free_velocity.value = vx
+            mo.free_position.value = x + vx * self.dt
+
+    def onAnimateBeginEvent(self, event):
+        t_n = self.k * self.dt
+        p0, q0 = self.traj(t_n)[:2]
+        p1, q1 = self.traj(t_n + self.dt)[:2]
+        if self.mode == "end":
+            self._set(p1, q1, np.zeros(3), np.zeros(3))
+        else:
+            v = (p1 - p0) / self.dt
+            w = rotvec_from_quat(quat_mul(q1, quat_inv(q0))) / self.dt
+            self._set(p0, q0, v, w)
+        self.k += 1
+
+
+def needle_wrench(child_mos, lam, dt, p_base):
+    """纯运动学针受到的约束合力和力矩（作用在针上，世界坐标，力矩以针根原点 p_base 为参考点）。
+
+    child_mos：挂在针根下的 Vec3 子节点 MO（针身点、针尖），约束建在它们上面；
+    lam：约束求解器的 constraintForces（λ，二阶积分器下是冲量 N·s），力 = λ / dt（0c 约定）；
+    每个子节点的 constraint 数据（scipy 稀疏矩阵，行 = 约束编号，列 = 3·点号 + 分量）就是 J，
+    点上的力 f_i = (Jᵀ λ)_i / dt；F = Σ f_i，τ = Σ (x_i - p_base) × f_i，x_i 用 free_position（约束作用的构形）。
+    不读针根刚体自己的 constraint 数据：SofaPython3 把 Rigid3 的约束矩阵转成 scipy 时出错（得到 0×0 并报错），见 0b-2。
+    返回 (F[3], τ[3], 各子节点的点力列表)。
+    """
+    lam = np.asarray(lam, float)
+    F, tau, per = np.zeros(3), np.zeros(3), []
+    for mo in child_mos:
+        J = mo.constraint.value
+        x = mo.free_position.array()
+        n, ncol = J.shape
+        if n == 0 or ncol == 0 or J.nnz == 0:          # 这个子节点上没有约束
+            per.append(np.zeros_like(x)); continue
+        lam_pad = np.zeros(n); m = min(n, len(lam)); lam_pad[:m] = lam[:m]
+        g = np.zeros(3 * len(x)); g[:ncol] = J.T @ lam_pad   # 列数可能只到最后一个被约束的点
+        f = g.reshape(-1, 3) / dt
+        F += f.sum(0)
+        tau += np.cross(x - p_base, f).sum(0)
+        per.append(f)
+    return F, tau, per
+
+
+def make_root(gravity=(0.0, 0.0, 0.0), dt=0.01, loop="default"):
+    """loop="default"：DefaultAnimationLoop（静力、无约束动力学）；
+    loop="free"：FreeMotionAnimationLoop + BlockGaussSeidelConstraintSolver（拉格朗日约束，第 1 步要用的配置）。"""
     root = Sofa.Core.Node("root")
     root.gravity = list(gravity)
     root.dt = dt
-    root.addObject("DefaultAnimationLoop")
+    if loop == "free":
+        root.addObject("FreeMotionAnimationLoop")
+        root.addObject("BlockGaussSeidelConstraintSolver", name="csolver", tolerance=1e-12, maxIterations=1000,
+                       computeConstraintForces=True)
+    else:
+        root.addObject("DefaultAnimationLoop")
     return root

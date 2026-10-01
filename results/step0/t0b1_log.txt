@@ -1,0 +1,8 @@
+mode=end   T1 v= 1mm/s steps=10070: base pos 2.8e-17 rot 0.0e+00 | base free 2.8e-17 rot 0.0e+00 | body pos 2.8e-17 free 2.8e-17 | tip pos 2.8e-17 free 2.8e-17 | time drift 1.5e-11 s | 0.468 ms/step
+mode=end   T1 v= 5mm/s steps= 2070: base pos 2.8e-17 rot 0.0e+00 | base free 2.8e-17 rot 0.0e+00 | body pos 2.8e-17 free 2.8e-17 | tip pos 2.8e-17 free 2.8e-17 | time drift 4.4e-13 s | 0.473 ms/step
+mode=end   T1 v=10mm/s steps= 1070: base pos 2.8e-17 rot 0.0e+00 | base free 2.8e-17 rot 0.0e+00 | body pos 2.8e-17 free 2.8e-17 | tip pos 2.8e-17 free 2.8e-17 | time drift -1.8e-13 s | 0.468 ms/step
+mode=end   T2 v=     - steps=  220: base pos 0.0e+00 rot 0.0e+00 | base free 0.0e+00 rot 0.0e+00 | body pos 1.4e-17 free 1.4e-17 | tip pos 1.4e-17 free 1.4e-17 | time drift -3.1e-15 s | 0.490 ms/step
+mode=start T1 v= 1mm/s steps=10070: base pos 0.0e+00 rot 0.0e+00 | base free 2.8e-17 rot 0.0e+00 | body pos 0.0e+00 free 2.8e-17 | tip pos 0.0e+00 free 2.8e-17 | time drift 1.5e-11 s | 0.492 ms/step
+mode=start T1 v= 5mm/s steps= 2070: base pos 0.0e+00 rot 0.0e+00 | base free 2.8e-17 rot 0.0e+00 | body pos 0.0e+00 free 2.8e-17 | tip pos 0.0e+00 free 2.8e-17 | time drift 4.4e-13 s | 0.504 ms/step
+mode=start T1 v=10mm/s steps= 1070: base pos 0.0e+00 rot 0.0e+00 | base free 2.8e-17 rot 0.0e+00 | body pos 0.0e+00 free 2.8e-17 | tip pos 0.0e+00 free 2.8e-17 | time drift -1.8e-13 s | 0.509 ms/step
+mode=start T2 v=     - steps=  220: base pos 0.0e+00 rot 0.0e+00 | base free 0.0e+00 rot 3.0e-08 | body pos 0.0e+00 free 1.3e-07 | tip pos 0.0e+00 free 1.3e-07 | time drift -3.1e-15 s | 0.525 ms/step
