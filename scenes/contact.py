@@ -70,6 +70,47 @@ def add_needle_geometry(nd, body, tip, n_body):
     return tg, bg
 
 
+def tip_patch_points(length, a_eff, spacing, shape="cap"):
+    """针尖面片的取样点（针的局部坐标：针根在原点，针轴沿 -z，针尖在 (0,0,-length)）。
+
+    shape="disk"：垂直于针轴、半径 a_eff 的平底圆盘，点在 z = -length 的平面上；
+    shape="cap"： 半径 a_eff 的半球形针尖，球心在 (0,0,-length+a_eff)，最低点在针尖 (0,0,-length)。
+    布点：同心圆环，圆心 1 点，第 k 环约 2πk 个点，相邻点距约 spacing（圆盘按半径方向等距，
+    球冠按弧长等距）。点关于 x、y 两个对称面对称（每环点数取 4 的倍数）。
+    这只是 V0 / V1–V5 的取样工具，"点距约等于 h"是待验证的经验规则（step1_5_tip_survey.md §0）。
+    """
+    pts = [[0.0, 0.0, -length]]
+    if shape == "disk":
+        nr = max(1, int(round(a_eff / spacing)))
+        for k in range(1, nr + 1):
+            r = a_eff * k / nr
+            m = max(4, int(round(2 * np.pi * r / spacing / 4)) * 4)
+            for j in range(m):
+                ph = 2 * np.pi * j / m
+                pts.append([r * np.cos(ph), r * np.sin(ph), -length])
+    else:
+        arc = a_eff * np.pi / 2                       # 从最低点到赤道的弧长
+        nr = max(1, int(round(arc / spacing)))
+        zc = -length + a_eff
+        for k in range(1, nr + 1):
+            th = (np.pi / 2) * k / nr                 # 极角，0 = 最低点
+            r = a_eff * np.sin(th)
+            m = max(4, int(round(2 * np.pi * r / spacing / 4)) * 4)
+            for j in range(m):
+                ph = 2 * np.pi * j / m
+                pts.append([r * np.cos(ph), r * np.sin(ph), zc - a_eff * np.cos(th)])
+    return np.array(pts)
+
+
+def add_tip_patch(nd, local_points, name="TipPatch"):
+    """把针尖面片的取样点挂在针根刚体上（RigidMapping），并加插件的 PointGeometry。返回 (MO, 几何)。"""
+    n = nd.addChild(name)
+    mo = n.addObject("MechanicalObject", name="dofs", template="Vec3d", position=np.asarray(local_points).tolist())
+    n.addObject("RigidMapping", input="@../base", output="@dofs", globalToLocalCoords=False)
+    g = n.addObject("PointGeometry", name="geom_tip", mstate="@dofs")
+    return mo, g
+
+
 def add_tip_contact(root, tip_geom, body_geom, tissue, distance=0.01):
     """针尖–表面的单边接触（刺穿前）。第 1 步：不刺穿、不插入、不检测针身。"""
     algo = root.addObject("InsertionAlgorithm", name="algo",

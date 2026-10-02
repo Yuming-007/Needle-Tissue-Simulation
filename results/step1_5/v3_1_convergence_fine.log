@@ -1,0 +1,28 @@
+== h = 10.00 mm（h/a = 1.000），四分之一模型自由度 520，建网格 + 分解 0.0 s
+  s = 10.000 mm（s/h = 1.00）：k =  204.0340 N/m，k/k_S = 1.6272，受力点 8/9，W 条件数 2.4e+01，互补残差 1.3e-12，0.0 s
+  s =  5.000 mm（s/h = 0.50）：k =  208.3898 N/m，k/k_S = 1.6619，受力点 8/21，W 条件数 1.7e+17，互补残差 8.9e-13，0.0 s
+  s =  2.500 mm（s/h = 0.25）：k =  208.4657 N/m，k/k_S = 1.6625，受力点 12/65，W 条件数 1.5e+18，互补残差 8.0e-13，0.0 s
+== h = 5.00 mm（h/a = 0.500），四分之一模型自由度 3600，建网格 + 分解 0.2 s
+  s = 10.000 mm（s/h = 2.00）：k =  166.4648 N/m，k/k_S = 1.3276，受力点 9/9，W 条件数 8.5e+00，互补残差 1.7e-12，0.0 s
+  s =  5.000 mm（s/h = 1.00）：k =  163.9330 N/m，k/k_S = 1.3074，受力点 15/21，W 条件数 7.9e+01，互补残差 9.0e-13，0.0 s
+  s =  2.500 mm（s/h = 0.50）：k =  171.7518 N/m，k/k_S = 1.3697，受力点 17/65，W 条件数 7.5e+17，互补残差 8.6e-13，0.0 s
+  s =  1.250 mm（s/h = 0.25）：k =  171.6938 N/m，k/k_S = 1.3693，受力点 33/229，W 条件数 2.6e+19，互补残差 4.9e-13，0.0 s
+== h = 2.50 mm（h/a = 0.250），四分之一模型自由度 26656，建网格 + 分解 24.4 s
+  s = 10.000 mm（s/h = 4.00）：k =  109.7413 N/m，k/k_S = 0.8752，受力点 9/9，W 条件数 5.3e+00，互补残差 1.8e-12，0.1 s
+  s =  2.500 mm（s/h = 1.00）：k =  146.6724 N/m，k/k_S = 1.1697，受力点 55/65，W 条件数 2.0e+03，互补残差 5.7e-13，0.5 s
+  s =  1.250 mm（s/h = 0.50）：k =  148.7088 N/m，k/k_S = 1.1860，受力点 79/229，W 条件数 1.1e+19，互补残差 7.2e-13，1.5 s
+  s =  0.625 mm（s/h = 0.25）：k =  149.0465 N/m，k/k_S = 1.1886，受力点 237/857，W 条件数 9.7e+20，互补残差 5.2e-13，5.2 s
+Can't expand MemType 2: jcol 185505
+[ERROR]   [SofaRuntime] MemoryError
+Traceback (most recent call last):
+    a = time.perf_counter(); m = T.Mesh(h, quarter=True); t_mesh = time.perf_counter() - a
+                                 ^^^^^^^^^^^^^^^^^^^^^^^
+    self.lu = sla.splu(K[self.free][:, self.free].tocsc(), permc_spec="COLAMD")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    return _superlu.gstrf(N, A.nnz, A.data, indices, indptr,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Command exited with non-zero status 1
+	Command being timed: "python3 v3_1_convergence.py --fine"
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 56:16.14
+	Maximum resident set size (kbytes): 15482748
