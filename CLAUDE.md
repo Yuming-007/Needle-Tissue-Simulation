@@ -38,7 +38,7 @@
 - `NeedleInsertion_*.json`、`diagnostics/`：只保留在本地，**不提交、不删除**（已写进 `.git/info/exclude`）。
 - 提交 git 前要征得同意；提交时只包含相关文件。
 - 协作方式（用户 2026-09-30 确定）：Claude 是主要执行者和技术判断者；ChatGPT 作为第二技术视角，直接读 GitHub 仓库做关键节点检查。GitHub 仓库是双方共同依据的项目事实。每个阶段或一组有意义的结果完成后，先给用户一份简短总结（关键结论、实验结果、修改内容），用户确认后再 commit + push。文档要写到外部读者不看对话也能看懂（结果、脚本、数据路径）。
-- 当前阶段：第 0 步、第 1 步（tenting 接触机制验证）已完成；第 1.5 步（有限支撑针尖 + 非均匀工作网格）进行中：V0、V5、V1、V2、V3 已完成（`docs/plan/step1_5_results.md`），下一步 V4 / V3b，然后设计 gmsh 网格。针尖分两层：平底圆盘 + 分布点（插件多点接触，B2a）作为机制开发替身和验证基准，半球留给定量验证；冻结的是接口（针尖合力 + 合力矩 → 刺穿判据），不是针尖形状；a_eff ≠ R_phys（`docs/plan/step1_5_tip_survey.md` §5）。粗规则网格（swapping=True）只作机制测试台，其上的力值不具有物理定量意义。方案 `docs/plan/00_start_plan.md`；场景代码 `scenes/`（`common.py`、`contact.py` + `step0/`、`step1/`、`step1_5/`），数据 `results/`。每个机制经用户确认后才进入下一个。
+- 当前阶段：第 0 步、第 1 步（tenting 接触机制验证）已完成；第 1.5 步（有限支撑针尖 + 非均匀工作网格）进行中：V0、V5、V1、V2、V3、V4 已完成（`docs/plan/step1_5_results.md`；V3b 推迟到定量阶段），下一步是非均匀工作网格：复用调研 `docs/plan/step1_5_mesh_survey.md`，设计方案草案 `docs/plan/step1_5_mesh_design.md`（待用户确认；安装 gmsh 需用户同意）。针尖分两层：平底圆盘 + 分布点（插件多点接触，B2a）作为机制开发替身和验证基准，半球留给定量验证；冻结的是接口（针尖合力 + 合力矩 → 刺穿判据），不是针尖形状；a_eff ≠ R_phys（`docs/plan/step1_5_tip_survey.md` §5）。粗规则网格（swapping=True）只作机制测试台，其上的力值不具有物理定量意义。方案 `docs/plan/00_start_plan.md`；场景代码 `scenes/`（`common.py`、`contact.py` + `step0/`、`step1/`、`step1_5/`），数据 `results/`。每个机制经用户确认后才进入下一个。
 - 用户决定（2026-09-30）：速度 = 动画不卡顿、接近真实穿刺速度（每步计算时间 ≤ dt）；3D 组织；先刚性针；组织用共旋线弹性；参数先用文献值；"破裂"定义和柔性针模型暂缓。
 - 用户决定（2026-09-30）：组织力场 = `FastTetrahedralCorotationalForceFieldFixed`（`plugins/NeedleSimFixes`），`method="polar"`；第 1–4 步机制验证用 ν = 0.45，这是**验证用参数，不是最终组织参数**，最终参数和接近不可压缩问题留到物理验证 / 参数辨识阶段。
 - 原则：在能实现目标机制的前提下尽量复用已有资源，但不为了靠近某个示例而偏离自己的路线。
