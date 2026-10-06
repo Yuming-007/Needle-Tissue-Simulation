@@ -27,7 +27,7 @@ def load_plugins():
 
 
 def add_tissue_with_surface(root, n=9, L=0.08, E=5000.0, nu=0.45, rho=1000.0, linear="ldl", swapping=True,
-                            flip_normals=False):
+                            flip_normals=False, mesh=None):
     """组织（动力学，FTCfix polar）+ 底面固定 + 约束修正 + 表面几何（插件）。
 
     swapping=True（默认）：Hexa2Tetra 相邻六面体的切分方向交替，网格在中心节点处镜像对称。
@@ -37,9 +37,10 @@ def add_tissue_with_surface(root, n=9, L=0.08, E=5000.0, nu=0.45, rho=1000.0, li
     """
     tr = root.addChild("TissueRoot")
     common.add_dynamic_solver(tr, linear=linear)
-    t, mo, ff = common.add_tissue(tr, L=L, n=n, E=E, nu=nu, rho=rho, swapping=swapping)
-    X = common.grid_nodes(L, n)
-    bot = np.where(np.isclose(X[:, 2], 0))[0]
+    # mesh：非均匀网格（common.load_mesh 的结果）；给定时 n、swapping 不起作用，底面仍取 z = 0 的节点
+    t, mo, ff = common.add_tissue(tr, L=L, n=n, E=E, nu=nu, rho=rho, swapping=swapping, mesh=mesh)
+    X = np.asarray(mesh["X"], float) if mesh is not None else common.grid_nodes(L, n)
+    bot = np.where(np.isclose(X[:, 2], 0, atol=1e-9))[0]
     t.addObject("FixedProjectiveConstraint", name="bottom", indices=bot.tolist())
     t.addObject("LinearSolverConstraintCorrection", linearSolver="@../linsolver")
     vol = t.addObject("TetrahedronGeometry", name="geom_tetra", mstate="@dofs", topology="@topo", draw=False)

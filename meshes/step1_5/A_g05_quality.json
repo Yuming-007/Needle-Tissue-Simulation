@@ -1,0 +1,34 @@
+{
+ "name": "A_g05",
+ "params": {
+  "a": 0.01,
+  "h_local": 0.005,
+  "h_far": 0.012,
+  "R_in": 0.015,
+  "D": 0.015,
+  "g": 0.5
+ },
+ "nodes": 729,
+ "tets": 2958,
+ "t_generate": 0.1337543330155313,
+ "n_flipped_orientation": 0,
+ "min_volume": 9.545640731225889e-09,
+ "dihedral_min": 24.991362630809903,
+ "dihedral_max": 136.07478881767787,
+ "frac_dihedral_outside_20_160": 0.0,
+ "minSICN_min": 0.5231225118131506,
+ "minSICN_p1": 0.6442763765786741,
+ "gamma_min": 0.4487856188869963,
+ "gamma_p1": 0.5847875126616123,
+ "gamma_median": 0.8390884040800604,
+ "neighbor_size_ratio_p99": 1.2752907361684553,
+ "neighbor_size_ratio_max": 1.561610047244782,
+ "fine_region_tets": 488,
+ "fine_edge_mean_over_target": 1.388397019024112,
+ "fine_edge_p5_p95_mm": [
+  4.982973111886199,
+  9.065705561675392
+ ],
+ "top_nodes_within_a": 12,
+ "top_nodes_within_Rin": 30
+}

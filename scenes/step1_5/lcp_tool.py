@@ -100,6 +100,56 @@ class Mesh:
         return 0.5 * (W + W.T), info
 
 
+class MeshArrays(Mesh):
+    """任意四面体网格（全模型，例如 gmsh 非均匀网格），接口同 Mesh。M3 起使用（2026-10-03）。
+
+    X：节点（米），tets：四面体（有符号体积为正）；底面 z = 0 的节点全固定；K 同样取 SOFA 组装的静力切线刚度。
+    """
+
+    def __init__(self, X, tets, h=None):
+        X = np.asarray(X, float); tets = np.asarray(tets, int)
+        self.h, self.quarter = h, False
+        bot = np.where(np.isclose(X[:, 2], 0, atol=1e-9))[0]
+        root = common.make_root(); common.add_static_solver(root, linear="ldl", abs_tol=1e-30, newton_iters=1)
+        t, mo, _ = common.add_tissue(root, E=E, nu=NU, mesh=dict(X=X, tets=tets))
+        t.addObject("FixedProjectiveConstraint", indices=bot.tolist())
+        top = np.where(np.isclose(X[:, 2], L, atol=1e-9))[0]
+        t.addObject("ConstantForceField", indices=[int(top[0])], forces=[[0, 0, -1e-6]])   # 触发组装
+        Sofa.Simulation.init(root)
+        Sofa.Simulation.animate(root, 0.01)
+        K = sp.csr_matrix(root.MatrixLinearSystem1.get_system_matrix())
+        Sofa.Simulation.unload(root)
+        fixed = [3 * i + c for i in bot for c in range(3)]
+        self.X, self.tets = X, tets
+        self.free = np.setdiff1d(np.arange(3 * len(X)), fixed)
+        self.lu = sla.splu(K[self.free][:, self.free].tocsc(), permc_spec="COLAMD")
+        self.ndof = len(self.free)
+        faces = set()
+        ontop = np.isclose(X[:, 2], L, atol=1e-9)
+        for tt in tets:
+            s_ = [v for v in tt if ontop[v]]
+            if len(s_) == 3:
+                faces.add(tuple(sorted(s_)))
+        self.tris = np.array(sorted(faces))
+        A_ = X[self.tris][:, :, :2]
+        self._T = np.stack([A_[:, 0] - A_[:, 2], A_[:, 1] - A_[:, 2]], axis=2)
+        self._c = A_[:, 2]
+
+
+def disk_stiffness_at(mesh, a, s, center, delta=1e-4):
+    """刚性平底圆盘（中心 center 的 xy，半径 a，点距 s）压下 δ 的线性接触刚度（全模型）、合力矩、受力点数。"""
+    pts = disk_points(a, s, center)
+    W, info = mesh.contact_compliance(pts, np.ones(len(pts)))
+    q = -delta * np.ones(len(pts))
+    mu, g = solve_lcp(W, q)
+    F = mu.sum()
+    r = pts - np.asarray(center)
+    M = np.array([(mu * r[:, 1]).sum(), -(mu * r[:, 0]).sum()])      # 力沿 +z 作用在针上：M = r × F
+    act = mu > 1e-9 * mu.max()
+    return dict(k=F / delta, M_xy=M.tolist(), cop=(np.array([-M[1], M[0]]) / F).tolist(), n_active=int(act.sum()),
+                n_points=int(len(pts)), complementarity=float(np.abs(mu * g).max() / (mu.max() * delta)))
+
+
 def solve_lcp(W, q):
     n = len(q)
     eps = 1e-12 * np.trace(W) / n

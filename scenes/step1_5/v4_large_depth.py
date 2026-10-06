@@ -12,7 +12,7 @@ step1_5_results.md V4。
 每步记录：压深、F、M_tip（针尖参考点）、受力点数、GS 迭代 / 残差、最差单元的有符号体积比 V/V0 及其位置
   （单元形心到针轴的距离、深度）、每步耗时、是否出现非有限值。
 d_0.1 = V/V0 首次 < 0.1 的压深（严重扭曲预警），d_inv = 首次 ≤ 0 的压深（翻转）。翻转后再跑 10 步后停止。
-运行：python3 v4_large_depth.py <组名>   组名：A（h = 10 全部 + h = 5 全部）、B（h = 4）、C（速度检查 1 mm/s）
+运行：python3 v4_large_depth.py <组名>   组名：A（h = 10 全部 + h = 5 全部）、B（h = 4）、C（速度检查 1 mm/s）、M（M3 筛选：A+、B+）
      → results/step1_5/v4_large_depth_<组名>.json
 """
 import sys
@@ -37,6 +37,7 @@ GROUPS = {
           (17, "disk", 0.010, 0.005, ""), (17, "cap", 0.010, 0.005, "")],
     "B": [(21, "disk", 0.010, 0.005, ""), (21, "cap", 0.010, 0.005, "")],
     "C": [(17, "disk", 0.010, 0.001, "速度检查：对照 A 组 5 mm/s")],
+    "M": [("A+", "disk", 0.010, 0.005, "M3 筛选：非均匀网格 A+"), ("B+", "disk", 0.010, 0.005, "M3 筛选：非均匀网格 B+")],
 }
 
 
@@ -46,7 +47,9 @@ def tet_volumes(x, tets):
 
 
 def run(n, tip, a, v, depth=0.020, gap=0.0005):
-    h = L / (n - 1)
+    # n：规则网格每边节点数；或者字符串 = 非均匀网格名（meshes/step1_5/<名>.npz，M3 筛选起使用），此时 h = 标称 h_local
+    mesh = common.load_mesh(n) if isinstance(n, str) else None
+    h = float(mesh["h_local"]) if mesh is not None else L / (n - 1)
     pts = contact.tip_patch_points(LEN, a, h, tip) if tip != "point" else np.array([[0.0, 0.0, -LEN]])
     zf, T = V.piecewise(L + gap, [(gap / v, -v), (depth / v, -v)])
     root = common.make_root(dt=dt, loop="free")
@@ -56,7 +59,8 @@ def run(n, tip, a, v, depth=0.020, gap=0.0005):
     root.addObject(common.NeedleDriver(base, traj, dt, children=[(body, local), (tip_mo, local[-1:]), (pmo, pts)],
                                        name="driver"))
     root.addObject("CollisionLoop")
-    tis = contact.add_tissue_with_surface(root, n=n, L=L, E=V.E, nu=V.NU, linear="ldl")
+    tis = contact.add_tissue_with_surface(root, n=n, L=L, E=V.E, nu=V.NU, linear="ldl") if mesh is None else \
+        contact.add_tissue_with_surface(root, L=L, E=V.E, nu=V.NU, linear="ldl", mesh=mesh)
     _, bg = contact.add_needle_geometry(nd, body, tip_mo, V.NB)
     contact.add_tip_contact(root, pg, bg, tis, distance=0.02)
     Sofa.Simulation.init(root)
@@ -95,7 +99,7 @@ def run(n, tip, a, v, depth=0.020, gap=0.0005):
         if stop_at is not None and k >= stop_at:
             break
     Sofa.Simulation.unload(root)
-    return dict(n=n, h_mm=h * 1e3, tip=tip, a_mm=a * 1e3, v_mm_s=v * 1e3, n_points=int(len(pts)),
+    return dict(n=n if mesh is None else str(n), h_mm=h * 1e3, tip=tip, a_mm=a * 1e3, v_mm_s=v * 1e3, n_points=int(len(pts)),
                 d01_mm=None if d01 is None else d01 * 1e3, dinv_mm=None if dinv is None else dinv * 1e3,
                 finite=finite, depth_reached_mm=rec["depth"][-1] * 1e3 if rec["depth"] else 0.0, rec=rec)
 

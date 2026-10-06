@@ -1,0 +1,34 @@
+{
+ "name": "U4",
+ "params": {
+  "a": 0.01,
+  "h_local": 0.004,
+  "h_far": 0.004,
+  "R_in": 0.015,
+  "D": 0.015,
+  "g": 0.35
+ },
+ "nodes": 7162,
+ "tets": 33882,
+ "t_generate": 1.440821755095385,
+ "n_flipped_orientation": 0,
+ "min_volume": 2.010988521660881e-09,
+ "dihedral_min": 22.267939837575167,
+ "dihedral_max": 138.34760807465435,
+ "frac_dihedral_outside_20_160": 0.0,
+ "minSICN_min": 0.501732701866189,
+ "minSICN_p1": 0.6577686917012175,
+ "gamma_min": 0.4468712107356113,
+ "gamma_p1": 0.6206512813788355,
+ "gamma_median": 0.8770743636716749,
+ "neighbor_size_ratio_p99": 1.2178048364522547,
+ "neighbor_size_ratio_max": 1.4379913202464496,
+ "fine_region_tets": 1097,
+ "fine_edge_mean_over_target": 1.3290653047863739,
+ "fine_edge_p5_p95_mm": [
+  3.999981552099989,
+  6.7647397195694685
+ ],
+ "top_nodes_within_a": 23,
+ "top_nodes_within_Rin": 52
+}

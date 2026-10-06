@@ -40,24 +40,33 @@ def grid_nodes(L, n, origin=(0.0, 0.0, 0.0)):
 
 
 def add_tissue(parent, L=0.08, n=9, E=5000.0, nu=0.3, rho=1000.0, method="polar",
-               name="Tissue", origin=(0.0, 0.0, 0.0), ff_type="FTCfix", swapping=False):
+               name="Tissue", origin=(0.0, 0.0, 0.0), ff_type="FTCfix", swapping=False, mesh=None):
     """8 cm 立方体（默认），n×n×n 节点的规则网格切成四面体，共旋线弹性。
 
+    mesh：给定时改用这套四面体网格（dict，X：节点坐标 (N, 3)，tets：四面体 (M, 4)，有符号体积为正），
+    例如第 1.5 步 gmsh 生成的非均匀网格（scenes/mesh/make_graded_mesh.py 输出的 npz）；此时忽略 L、n、origin、swapping。
     parent 节点下不放求解器，由调用者决定（静力 / 动力）。
     返回 (tissue 节点, MechanicalObject, 力场)。
     """
-    o, L3, n3 = _vec3(origin), _vec3(L), _vec3(n).astype(int)
-    topo = parent.addChild(name + "Grid")
-    topo.addObject("RegularGridTopology", name="hexa", n=n3.tolist(),
-                   min=o.tolist(), max=(o + L3).tolist())
-    t = parent.addChild(name)
-    t.addObject("TetrahedronSetTopologyContainer", name="topo",
-                position="@../%sGrid/hexa.position" % name)
-    t.addObject("TetrahedronSetTopologyModifier", name="modifier")
-    # swapping=True：相邻六面体的切分方向交替（见 step1 结果：swapping=False 时网格不对称，
-    # 中心节点受竖直点载荷会侧向漂移约 24%）
-    t.addObject("Hexa2TetraTopologicalMapping", input="@../%sGrid/hexa" % name,
-                output="@topo", swapping=swapping)
+    if mesh is not None:
+        t = parent.addChild(name)
+        t.addObject("TetrahedronSetTopologyContainer", name="topo",
+                    position=np.asarray(mesh["X"], float).tolist(), tetrahedra=np.asarray(mesh["tets"], int).tolist())
+        t.addObject("TetrahedronSetTopologyModifier", name="modifier")
+    else:
+        # 规则网格节点必须先于组织节点创建（初始化按场景图顺序进行，Hexa2Tetra 需要六面体拓扑已初始化）
+        o, L3, n3 = _vec3(origin), _vec3(L), _vec3(n).astype(int)
+        topo = parent.addChild(name + "Grid")
+        topo.addObject("RegularGridTopology", name="hexa", n=n3.tolist(),
+                       min=o.tolist(), max=(o + L3).tolist())
+        t = parent.addChild(name)
+        t.addObject("TetrahedronSetTopologyContainer", name="topo",
+                    position="@../%sGrid/hexa.position" % name)
+        t.addObject("TetrahedronSetTopologyModifier", name="modifier")
+        # swapping=True：相邻六面体的切分方向交替（见 step1 结果：swapping=False 时网格不对称，
+        # 中心节点受竖直点载荷会侧向漂移约 24%）
+        t.addObject("Hexa2TetraTopologicalMapping", input="@../%sGrid/hexa" % name,
+                    output="@topo", swapping=swapping)
     mo = t.addObject("MechanicalObject", name="dofs", template="Vec3d")
     # 质量：静力测试不用，但动力测试需要；密度 × 体积
     t.addObject("MeshMatrixMass", name="mass", massDensity=rho, topology="@topo")
@@ -65,6 +74,14 @@ def add_tissue(parent, L=0.08, n=9, E=5000.0, nu=0.3, rho=1000.0, method="polar"
            "FTC": "FastTetrahedralCorotationalForceField", "TFEM": "TetrahedronFEMForceField"}[ff_type]
     ff = t.addObject(cls, name="fem", youngModulus=E, poissonRatio=nu, method=method, topology="@topo")
     return t, mo, ff
+
+
+def load_mesh(name_or_path):
+    """读取 scenes/mesh/make_graded_mesh.py 输出的 npz（给名字时到 meshes/step1_5/ 下找）。返回 dict（X、tets、参数）。"""
+    p = name_or_path if name_or_path.endswith(".npz") else os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "../meshes/step1_5", name_or_path + ".npz")
+    d = np.load(p)
+    return {k: d[k] for k in d.files}
 
 
 def add_static_solver(node, linear="cg", newton_iters=50, abs_tol=1e-20):

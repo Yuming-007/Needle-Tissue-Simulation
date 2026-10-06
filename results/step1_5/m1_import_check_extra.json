@@ -1,0 +1,167 @@
+[
+ {
+  "name": "A_f16g05",
+  "nodes": 512,
+  "tets": 2144,
+  "bottom_nodes": 45,
+  "min_volume": 9.375925480258832e-09,
+  "same_positions": true,
+  "same_tets": true,
+  "top_triangles": 190,
+  "top_normals_inward": 0,
+  "top_normals_outward": 190,
+  "surface_triangles": 526,
+  "loader_nodes": 512,
+  "loader_tets": 2144,
+  "loader_triangles": 4551,
+  "loader_same_nodes": true,
+  "loader_same_tets": true,
+  "loader_min_volume": 9.375925480258847e-09,
+  "n_points": 21,
+  "k": 175.28888543951155,
+  "lateral_over_axial": 3.826680427372318e-05,
+  "M_tip": [
+   4.0412506418378585e-06,
+   1.5954242787954073e-06,
+   8.473611321342018e-10
+  ],
+  "cop_mm": [
+   -0.18203370679153869,
+   0.46109605086545574
+  ],
+  "n_active": 17,
+  "gs_iter": 36
+ },
+ {
+  "name": "A+_f16g05",
+  "nodes": 725,
+  "tets": 3251,
+  "bottom_nodes": 44,
+  "min_volume": 9.808765698245012e-09,
+  "same_positions": true,
+  "same_tets": true,
+  "top_triangles": 266,
+  "top_normals_inward": 0,
+  "top_normals_outward": 266,
+  "surface_triangles": 622,
+  "loader_nodes": 725,
+  "loader_tets": 3251,
+  "loader_triangles": 6813,
+  "loader_same_nodes": true,
+  "loader_same_tets": true,
+  "loader_min_volume": 9.808765698245024e-09,
+  "n_points": 21,
+  "k": 170.96528092095153,
+  "lateral_over_axial": 1.0551488910373518e-05,
+  "M_tip": [
+   -3.891062076724607e-07,
+   -2.303415652520961e-06,
+   -5.424437935666632e-10
+  ],
+  "cop_mm": [
+   0.2694600494455053,
+   -0.04551873989578187
+  ],
+  "n_active": 16,
+  "gs_iter": 38
+ },
+ {
+  "name": "A+_f20g05",
+  "nodes": 658,
+  "tets": 3047,
+  "bottom_nodes": 30,
+  "min_volume": 9.657176578651312e-09,
+  "same_positions": true,
+  "same_tets": true,
+  "top_triangles": 258,
+  "top_normals_inward": 0,
+  "top_normals_outward": 258,
+  "surface_triangles": 504,
+  "loader_nodes": 658,
+  "loader_tets": 3047,
+  "loader_triangles": 6346,
+  "loader_same_nodes": true,
+  "loader_same_tets": true,
+  "loader_min_volume": 9.657176578651299e-09,
+  "n_points": 21,
+  "k": 175.08953477337374,
+  "lateral_over_axial": 2.1640685368122016e-05,
+  "M_tip": [
+   5.212996569756312e-07,
+   -9.419775587046164e-07,
+   1.8358076765370622e-09
+  ],
+  "cop_mm": [
+   0.10759952728459346,
+   0.05954663797015969
+  ],
+  "n_active": 16,
+  "gs_iter": 31
+ },
+ {
+  "name": "A+_f20g07",
+  "nodes": 611,
+  "tets": 2830,
+  "bottom_nodes": 30,
+  "min_volume": 8.922986995305625e-09,
+  "same_positions": true,
+  "same_tets": true,
+  "top_triangles": 230,
+  "top_normals_inward": 0,
+  "top_normals_outward": 230,
+  "surface_triangles": 460,
+  "loader_nodes": 611,
+  "loader_tets": 2830,
+  "loader_triangles": 5890,
+  "loader_same_nodes": true,
+  "loader_same_tets": true,
+  "loader_min_volume": 8.922986995305635e-09,
+  "n_points": 21,
+  "k": 173.15749620558174,
+  "lateral_over_axial": 9.339608927974755e-06,
+  "M_tip": [
+   1.7743011546649182e-07,
+   6.128392613221761e-07,
+   -5.042166419508165e-10
+  ],
+  "cop_mm": [
+   -0.07078402896224005,
+   0.02049349515378265
+  ],
+  "n_active": 17,
+  "gs_iter": 29
+ },
+ {
+  "name": "U5",
+  "nodes": 4041,
+  "tets": 18284,
+  "bottom_nodes": 341,
+  "min_volume": 4.713617745078501e-09,
+  "same_positions": true,
+  "same_tets": true,
+  "top_triangles": 610,
+  "top_normals_inward": 0,
+  "top_normals_outward": 610,
+  "surface_triangles": 3658,
+  "loader_nodes": 4041,
+  "loader_tets": 18284,
+  "loader_triangles": 38397,
+  "loader_same_nodes": true,
+  "loader_same_tets": true,
+  "loader_min_volume": 4.713617745078501e-09,
+  "n_points": 21,
+  "k": 166.82313704388093,
+  "lateral_over_axial": 9.01828933164399e-06,
+  "M_tip": [
+   -1.1456224989587741e-07,
+   1.2519141908373006e-06,
+   -3.66527476942973e-10
+  ],
+  "cop_mm": [
+   -0.150088796197153,
+   -0.013734575662098446
+  ],
+  "n_active": 16,
+  "gs_iter": 35
+ }
+]

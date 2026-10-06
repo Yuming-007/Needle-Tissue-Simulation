@@ -16,7 +16,9 @@ fi
 SCENE="${1:?请给出场景文件，例如 scenes/step0/t0d_gui_scene.py}"; shift
 cd "$PROJECT"
 if [ $# -gt 0 ]; then
-  exec "$SOFA_ROOT/bin/runSofa" ${RUNSOFA_OPTS} -l SofaPython3 "$SCENE" --argv "$@"
+  # 每个场景参数各加一个 --argv（runSofa 的一个 --argv 只接收一个值；多个参数挤在一起时，后面的会被当成场景文件）
+  ARGS=(); for a in "$@"; do ARGS+=(--argv "$a"); done
+  exec "$SOFA_ROOT/bin/runSofa" ${RUNSOFA_OPTS} -l SofaPython3 "$SCENE" "${ARGS[@]}"
 else
   exec "$SOFA_ROOT/bin/runSofa" ${RUNSOFA_OPTS} -l SofaPython3 "$SCENE"
 fi

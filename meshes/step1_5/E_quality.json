@@ -1,0 +1,34 @@
+{
+ "name": "E",
+ "params": {
+  "a": 0.01,
+  "h_local": 0.0025,
+  "h_far": 0.012,
+  "R_in": 0.015,
+  "D": 0.015,
+  "g": 0.35
+ },
+ "nodes": 2052,
+ "tets": 10162,
+ "t_generate": 0.4421239149523899,
+ "n_flipped_orientation": 0,
+ "min_volume": 1.3160361907324382e-09,
+ "dihedral_min": 22.92342464702324,
+ "dihedral_max": 134.94094789279032,
+ "frac_dihedral_outside_20_160": 0.0,
+ "minSICN_min": 0.5232707278575213,
+ "minSICN_p1": 0.6653019230159612,
+ "gamma_min": 0.48511969510263053,
+ "gamma_p1": 0.6223039226730119,
+ "gamma_median": 0.8747497636755575,
+ "neighbor_size_ratio_p99": 1.2702610945857324,
+ "neighbor_size_ratio_max": 1.4519891754195244,
+ "fine_region_tets": 4049,
+ "fine_edge_mean_over_target": 1.37621233931864,
+ "fine_edge_p5_p95_mm": [
+  2.5007721770306,
+  4.345472146349401
+ ],
+ "top_nodes_within_a": 58,
+ "top_nodes_within_Rin": 132
+}

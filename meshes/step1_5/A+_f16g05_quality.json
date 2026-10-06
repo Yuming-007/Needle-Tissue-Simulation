@@ -1,0 +1,34 @@
+{
+ "name": "A+_f16g05",
+ "params": {
+  "a": 0.01,
+  "h_local": 0.005,
+  "h_far": 0.016,
+  "R_in": 0.02,
+  "D": 0.02,
+  "g": 0.5
+ },
+ "nodes": 725,
+ "tets": 3251,
+ "t_generate": 0.1441491689765826,
+ "n_flipped_orientation": 0,
+ "min_volume": 9.808765698245012e-09,
+ "dihedral_min": 25.310362530975006,
+ "dihedral_max": 134.72869355961495,
+ "frac_dihedral_outside_20_160": 0.0,
+ "minSICN_min": 0.5499878046350077,
+ "minSICN_p1": 0.6649834063418283,
+ "gamma_min": 0.4631982767942577,
+ "gamma_p1": 0.6159462052283634,
+ "gamma_median": 0.8581504087789653,
+ "neighbor_size_ratio_p99": 1.2854439054351525,
+ "neighbor_size_ratio_max": 1.508372032019467,
+ "fine_region_tets": 1150,
+ "fine_edge_mean_over_target": 1.3921660676577106,
+ "fine_edge_p5_p95_mm": [
+  4.999014230436163,
+  9.126479184245884
+ ],
+ "top_nodes_within_a": 15,
+ "top_nodes_within_Rin": 59
+}

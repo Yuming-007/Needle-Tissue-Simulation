@@ -1,0 +1,34 @@
+{
+ "name": "B++",
+ "params": {
+  "a": 0.01,
+  "h_local": 0.004,
+  "h_far": 0.012,
+  "R_in": 0.025,
+  "D": 0.025,
+  "g": 0.35
+ },
+ "nodes": 1982,
+ "tets": 9832,
+ "t_generate": 0.3827338389819488,
+ "n_flipped_orientation": 0,
+ "min_volume": 5.733567418296638e-09,
+ "dihedral_min": 25.761990799318756,
+ "dihedral_max": 132.96811810927665,
+ "frac_dihedral_outside_20_160": 0.0,
+ "minSICN_min": 0.5856001906834293,
+ "minSICN_p1": 0.6828251998525389,
+ "gamma_min": 0.49465071956870665,
+ "gamma_p1": 0.6438653665473415,
+ "gamma_median": 0.8775684827423557,
+ "neighbor_size_ratio_p99": 1.2364055700278944,
+ "neighbor_size_ratio_max": 1.4194773395312557,
+ "fine_region_tets": 4578,
+ "fine_edge_mean_over_target": 1.3778637582587954,
+ "fine_edge_p5_p95_mm": [
+  4.043191161017943,
+  6.991541186922452
+ ],
+ "top_nodes_within_a": 22,
+ "top_nodes_within_Rin": 145
+}

@@ -1,0 +1,34 @@
+{
+ "name": "U5",
+ "params": {
+  "a": 0.01,
+  "h_local": 0.005,
+  "h_far": 0.005,
+  "R_in": 0.015,
+  "D": 0.015,
+  "g": 0.35
+ },
+ "nodes": 4041,
+ "tets": 18284,
+ "t_generate": 0.7322916080011055,
+ "n_flipped_orientation": 0,
+ "min_volume": 4.713617745078501e-09,
+ "dihedral_min": 21.25677076017336,
+ "dihedral_max": 140.61487833616678,
+ "frac_dihedral_outside_20_160": 0.0,
+ "minSICN_min": 0.484813512665276,
+ "minSICN_p1": 0.6487828536317489,
+ "gamma_min": 0.4304942151929152,
+ "gamma_p1": 0.6005720742070532,
+ "gamma_median": 0.8673833847321275,
+ "neighbor_size_ratio_p99": 1.2259982008572397,
+ "neighbor_size_ratio_max": 1.4252038317231226,
+ "fine_region_tets": 575,
+ "fine_edge_mean_over_target": 1.3212356925075859,
+ "fine_edge_p5_p95_mm": [
+  4.999999999941607,
+  8.469129011053559
+ ],
+ "top_nodes_within_a": 12,
+ "top_nodes_within_Rin": 32
+}

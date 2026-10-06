@@ -1,0 +1,34 @@
+{
+ "name": "A_far16",
+ "params": {
+  "a": 0.01,
+  "h_local": 0.005,
+  "h_far": 0.016,
+  "R_in": 0.015,
+  "D": 0.015,
+  "g": 0.35
+ },
+ "nodes": 580,
+ "tets": 2443,
+ "t_generate": 0.10946443991269916,
+ "n_flipped_orientation": 0,
+ "min_volume": 9.516004531346506e-09,
+ "dihedral_min": 20.695547300114857,
+ "dihedral_max": 141.282888167678,
+ "frac_dihedral_outside_20_160": 0.0,
+ "minSICN_min": 0.47302533667007546,
+ "minSICN_p1": 0.6294721485940825,
+ "gamma_min": 0.3399086742927238,
+ "gamma_p1": 0.5837369082258016,
+ "gamma_median": 0.8462684863014454,
+ "neighbor_size_ratio_p99": 1.2661140191347415,
+ "neighbor_size_ratio_max": 1.4766871869990073,
+ "fine_region_tets": 464,
+ "fine_edge_mean_over_target": 1.4086373202201758,
+ "fine_edge_p5_p95_mm": [
+  4.844690002942671,
+  9.669128321759022
+ ],
+ "top_nodes_within_a": 14,
+ "top_nodes_within_Rin": 34
+}

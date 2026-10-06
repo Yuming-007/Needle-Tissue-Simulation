@@ -1,0 +1,34 @@
+{
+ "name": "A-",
+ "params": {
+  "a": 0.01,
+  "h_local": 0.005,
+  "h_far": 0.012,
+  "R_in": 0.01,
+  "D": 0.01,
+  "g": 0.35
+ },
+ "nodes": 638,
+ "tets": 2444,
+ "t_generate": 0.16281372995581478,
+ "n_flipped_orientation": 0,
+ "min_volume": 1.061731258629021e-08,
+ "dihedral_min": 20.79218752278991,
+ "dihedral_max": 139.47989725570815,
+ "frac_dihedral_outside_20_160": 0.0,
+ "minSICN_min": 0.4832667697541855,
+ "minSICN_p1": 0.6080289474818387,
+ "gamma_min": 0.37495237443879226,
+ "gamma_p1": 0.5495211789379901,
+ "gamma_median": 0.8294127947947275,
+ "neighbor_size_ratio_p99": 1.2955224681393067,
+ "neighbor_size_ratio_max": 1.5318308089163093,
+ "fine_region_tets": 146,
+ "fine_edge_mean_over_target": 1.3750423588038247,
+ "fine_edge_p5_p95_mm": [
+  4.407692319566525,
+  9.386191596655145
+ ],
+ "top_nodes_within_a": 17,
+ "top_nodes_within_Rin": 17
+}
