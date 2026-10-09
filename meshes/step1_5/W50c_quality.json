@@ -1,0 +1,35 @@
+{
+ "name": "W50c",
+ "params": {
+  "a": 0.01,
+  "h_local": 0.005,
+  "h_far": 0.012,
+  "R_in": 0.02,
+  "D": 0.05,
+  "g": 0.35,
+  "center_node": true
+ },
+ "nodes": 1271,
+ "tets": 6039,
+ "t_generate": 0.2599024740047753,
+ "n_flipped_orientation": 0,
+ "min_volume": 1.0006832731078788e-08,
+ "dihedral_min": 24.855547130072456,
+ "dihedral_max": 136.7223477469865,
+ "frac_dihedral_outside_20_160": 0.0,
+ "minSICN_min": 0.5552876930013055,
+ "minSICN_p1": 0.6715683898169702,
+ "gamma_min": 0.48972678176290313,
+ "gamma_p1": 0.6345111073217279,
+ "gamma_median": 0.8772547417419415,
+ "neighbor_size_ratio_p99": 1.2399581963675894,
+ "neighbor_size_ratio_max": 1.4563428147860733,
+ "fine_region_tets": 2183,
+ "fine_edge_mean_over_target": 1.395136421930768,
+ "fine_edge_p5_p95_mm": [
+  5.2177636922574235,
+  8.874843917891086
+ ],
+ "top_nodes_within_a": 14,
+ "top_nodes_within_Rin": 61
+}

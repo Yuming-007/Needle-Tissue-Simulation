@@ -3,7 +3,8 @@
 流畅度标准（用户 2026-10-03）：只要求 SOFA 动画播放流畅不卡，**不要求按真实速度播放**。
   判据（用户认可）：帧率约 ≥ 30 帧/秒，即每帧（计算 + 绘制）平均 ≤ 约 33 ms，且没有明显的长时间停顿。
 场景：gmsh 非均匀网格（参数 1：网格名，默认 A+），FTCfix polar，ν = 0.45，E = 5 kPa，底面固定；
-  AsyncSparseLDLSolver，dt = 0.01；a_eff = 10 mm 圆盘针尖（点距 = 标称 h_local），插件多点单边接触（不刺穿）。
+  AsyncSparseLDLSolver，dt = 0.01；针尖（参数 3）：point = 单点（默认，2026-10-09 起），disk = a_eff = 10 mm 圆盘
+  （点距 = 标称 h_local）；插件单边接触（不刺穿）。
   针竖直对准顶面中心，在表面上方 5 mm 和最大压深（参数 2，默认 8 mm）之间以 5 mm/s（仿真时间）往复。
   默认 8 mm：在 A+ / B / B+ 的大压深包络之内（B+ 的 d_0.1 = 9.5 mm；第一版用 10 mm 时 B+ 每个周期都被压到翻转，
   求解器迭代暴增，每步 > 0.6 s）。
@@ -12,7 +13,7 @@
   帧率 = 1 / 平均帧时间，超过 33 ms 和 100 ms 的帧所占比例；每 100 步打印针尖合力和压深。
 
 运行（由用户在自己的屏幕上运行）：
-  RUNSOFA_OPTS="-g glfw" tools/run_gui.sh scenes/step1_5/m3_gui_scene.py A+ [最大压深 mm]   （按空格开始；B+、B 同理）
+  RUNSOFA_OPTS="-g glfw" tools/run_gui.sh scenes/step1_5/m3_gui_scene.py W50 [最大压深 mm] [point|disk]   （按空格开始）
 无界面初筛（Claude 用）：RUNSOFA_OPTS="-g batch -n 1000" tools/run_gui.sh scenes/step1_5/m3_gui_scene.py A+
 """
 import sys
@@ -65,6 +66,7 @@ def createScene(root):
     args = [a for a in sys.argv[1:] if not a.endswith(".py")]
     name = args[0] if args else "A+"
     depth = float(args[1]) * 1e-3 if len(args) > 1 else 0.008     # 参数 2：最大压深（mm），默认 8 mm
+    tip_kind = args[2] if len(args) > 2 else "point"                # 参数 3：point（默认，2026-10-09 起）或 disk
     mesh = common.load_mesh(name)
     h = float(mesh["h_local"])
     dt, v, top, a_eff = 0.01, 0.005, 0.005, 0.010
@@ -77,7 +79,7 @@ def createScene(root):
     common.make_root(dt=dt, loop="free", root=root)
     traj = lambda t: (np.array([V.L / 2, V.L / 2, zf(t) + V.LEN]), V.Q)
     nd, base, body, tip, local = common.add_kinematic_needle(root, length=V.LEN, n_body=V.NB, pose0=traj(0.0))
-    pts = contact.tip_patch_points(V.LEN, a_eff, h, "disk")
+    pts = contact.tip_patch_points(V.LEN, a_eff, h, "disk") if tip_kind == "disk" else np.array([[0.0, 0.0, -V.LEN]])
     pmo, pg = contact.add_tip_patch(nd, pts)
     root.addObject(common.NeedleDriver(base, traj, dt, children=[(body, local), (tip, local[-1:]), (pmo, pts)], name="driver"))
     root.addObject("CollisionLoop")
@@ -94,5 +96,5 @@ def createScene(root):
     root.addObject(SmoothMonitor(name="monitor"))
     root.addObject(ForcePrinter(root, pmo, base, dt, name="forces"))
     print(f"[场景] 网格 {name}：{len(mesh['X'])} 个节点，{len(mesh['tets'])} 个四面体，h_local = {h*1e3:.0f} mm，针尖 {len(pts)} 个点，"
-          f"最大压深 {depth*1e3:.1f} mm", flush=True)
+          f"最大压深 {depth*1e3:.1f} mm，针尖 {tip_kind}", flush=True)
     return root

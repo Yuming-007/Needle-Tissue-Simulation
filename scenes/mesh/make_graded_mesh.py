@@ -48,6 +48,9 @@ CANDIDATES = {
     "B+":         dict(a=0.010, h_local=0.004, h_far=0.012, R_in=0.020, D=0.020, g=0.35),
     "B++":        dict(a=0.010, h_local=0.004, h_far=0.012, R_in=0.025, D=0.025, g=0.35),
     "U4":         dict(a=0.010, h_local=0.004, h_far=0.004, R_in=0.015, D=0.015, g=0.35),   # 离线参照
+    # 第 2–6 步的工作网格（用户 2026-10-09）：A+ 的加密区沿竖直针道延长到最大插入深度 50 mm，一次覆盖后续各步
+    "W50":        dict(a=0.010, h_local=0.005, h_far=0.012, R_in=0.020, D=0.050, g=0.35),
+    "W50c":       dict(a=0.010, h_local=0.005, h_far=0.012, R_in=0.020, D=0.050, g=0.35, center_node=True),   # W50 + 顶面中心节点
 }
 
 
@@ -65,6 +68,13 @@ def generate(name, p, optimize_netgen=True, algo3d=1):
     gmsh.model.add(name)
     gmsh.model.occ.addBox(0, 0, 0, L, L, L)
     gmsh.model.occ.synchronize()
+    if p.get("center_node"):
+        # 在顶面中心嵌入一个节点（针的入口点），让单点针尖正好压在节点上（2026-10-09）
+        top = [t for d, t in gmsh.model.getEntities(2)
+               if abs(gmsh.model.occ.getCenterOfMass(2, t)[2] - L) < 1e-9]
+        pc = gmsh.model.occ.addPoint(L / 2, L / 2, L, p["h_local"])   # 和立方体同一个内核（OCC），否则嵌入不生效
+        gmsh.model.occ.synchronize()
+        gmsh.model.mesh.embed(0, [pc], 2, top[0])
     vols = [t for _, t in gmsh.model.getEntities(3)]
     gmsh.model.addPhysicalGroup(3, vols, 1, name="tissue")
     W = max((p["h_far"] - p["h_local"]) / p["g"], 1e-6)
@@ -173,7 +183,7 @@ if __name__ == "__main__":
     for name in names:
         p = CANDIDATES[name]
         X, tets, gq, t_gen, n_neg = generate(name, p)
-        np.savez(os.path.join(OUT, f"{name}.npz"), X=X, tets=tets, **{k: v for k, v in p.items()})
+        np.savez(os.path.join(OUT, f"{name}.npz"), X=X, tets=tets, **{k: v for k, v in p.items() if k != "center_node"})
         rep = quality(name, X, tets, p, gq, t_gen, n_neg)
         json.dump(rep, open(os.path.join(OUT, f"{name}_quality.json"), "w"), indent=1)
         print(f"{name:8s} 节点 {rep['nodes']:5d}，四面体 {rep['tets']:6d}（加密区 {rep['fine_region_tets']}），{t_gen:.1f} s；"
