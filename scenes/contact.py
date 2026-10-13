@@ -27,7 +27,7 @@ def load_plugins():
 
 
 def add_tissue_with_surface(root, n=9, L=0.08, E=5000.0, nu=0.45, rho=1000.0, linear="ldl", swapping=True,
-                            flip_normals=False, mesh=None):
+                            flip_normals=False, mesh=None, rayleigh_stiffness=0.0, rayleigh_mass=0.0):
     """组织（动力学，FTCfix polar）+ 底面固定 + 约束修正 + 表面几何（插件）。
 
     swapping=True（默认）：Hexa2Tetra 相邻六面体的切分方向交替，网格在中心节点处镜像对称。
@@ -36,7 +36,7 @@ def add_tissue_with_surface(root, n=9, L=0.08, E=5000.0, nu=0.45, rho=1000.0, li
     返回 dict：node、dofs、surface 节点、表面几何 / 法向组件、体几何、底面节点编号、网格节点坐标 X。
     """
     tr = root.addChild("TissueRoot")
-    common.add_dynamic_solver(tr, linear=linear)
+    common.add_dynamic_solver(tr, linear=linear, rayleigh_stiffness=rayleigh_stiffness, rayleigh_mass=rayleigh_mass)
     # mesh：非均匀网格（common.load_mesh 的结果）；给定时 n、swapping 不起作用，底面仍取 z = 0 的节点
     t, mo, ff = common.add_tissue(tr, L=L, n=n, E=E, nu=nu, rho=rho, swapping=swapping, mesh=mesh)
     X = np.asarray(mesh["X"], float) if mesh is not None else common.grid_nodes(L, n)
@@ -123,3 +123,29 @@ def add_tip_contact(root, tip_geom, body_geom, tissue, distance=0.01):
     cu = root.addObject("ConstraintUnilateral", name="tipContact", input="@algo.collisionOutput",
                         directions="@contactDir")
     return algo, cu
+
+
+def add_puncture_insertion(root, tip_geom, body_geom, tissue, threshold, tip_dist=0.005, friction=0.0,
+                           distance=0.02):
+    """第 2 步：插件原生的刺穿状态机（刺穿前单边接触 → 力超过阈值后刺穿 → 沿针道每 tip_dist 一个耦合点）。
+
+    组件组合同官方场景 NeedleInsertion.py:185-201（只读）；针身碰撞关闭。
+    threshold：刺穿阈值（N），和上一步针尖 MO 上的 Σ‖λ‖/dt 比较（InsertionAlgorithm.cpp:177-197，一步延迟）。
+    friction：ConstraintInsertion 的 frictionCoeff。它不是物理摩擦系数（docs/code/01 问题 1），第 2–3 步取 0：
+      轴向行的力恒为 0，组织沿针自由滑动，只剩 2 行横向约束（InsertionResolution.h:40-67）。
+    """
+    algo = root.addObject("InsertionAlgorithm", name="algo",
+                          tipGeom=tip_geom.getLinkPath(), surfGeom=tissue["surf_geom"].getLinkPath(),
+                          shaftGeom=body_geom.getLinkPath(), volGeom=tissue["vol_geom"].getLinkPath(),
+                          enablePuncture=True, enableInsertion=True, enableShaftCollision=False,
+                          punctureForceThreshold=threshold, tipDistThreshold=tip_dist,
+                          drawcollision=True, drawPointsScale=0.0008)
+    root.addObject("DistanceFilter", algo="@algo", distance=distance)
+    root.addObject("SecondDirection", name="contactDir", handler=tissue["normals"].getLinkPath())
+    cu = root.addObject("ConstraintUnilateral", name="tipContact", input="@algo.collisionOutput",
+                        directions="@contactDir")
+    edges = body_geom.getContext().getObject("needleEdges")
+    root.addObject("FirstDirection", name="bindDir", handler=edges.getLinkPath())
+    ci = root.addObject("ConstraintInsertion", name="insertion", input="@algo.insertionOutput",
+                        directions="@bindDir", frictionCoeff=friction)
+    return algo, cu, ci
