@@ -39,15 +39,18 @@ def trajectory(v=SPEED, depth=DEPTH, gap=GAP, hold=1.0, hold_end=0.5):
     return V.piecewise(L + gap, [((gap + depth) / v, -v), (hold, 0.0), ((gap + depth) / v, v), (hold_end, 0.0)])
 
 
-def build(root, dt=0.01, linear="ldl", threshold=THRESHOLD, tip_dist=TIP_DIST, zf=None, rayleigh_stiffness=BETA, rayleigh_mass=0.0):
+def build(root, dt=0.01, linear="ldl", threshold=THRESHOLD, tip_dist=TIP_DIST, zf=None, rayleigh_stiffness=BETA, rayleigh_mass=0.0,
+          xf=None):
     """搭建第 2 步场景（离线脚本和 GUI 场景共用）。返回各部件的 dict。
     rayleigh_stiffness：组织的 Rayleigh 刚度阻尼 β（EulerImplicitSolver.rayleighStiffness），默认 BETA = 0.1；
-    rayleigh_mass：Rayleigh 质量阻尼 α（1/s），默认 0（只在对照检查里用）。"""
+    rayleigh_mass：Rayleigh 质量阻尼 α（1/s），默认 0（只在对照检查里用）。
+    xf：针的横向平移 x(t)（m，整根针沿 +x 平移，第 3 步导向检验用），默认不平移。"""
     if zf is None:
         zf, _ = trajectory()
     common.make_root(dt=dt, loop="free", root=root)
     xy = np.array([L / 2, L / 2])
-    traj = lambda t: (np.array([xy[0], xy[1], zf(t) + LEN]), Q)
+    dx = xf if xf is not None else (lambda t: 0.0)
+    traj = lambda t: (np.array([xy[0] + dx(t), xy[1], zf(t) + LEN]), Q)
     nd, base, body, tip, local = common.add_kinematic_needle(root, length=LEN, n_body=NB, pose0=traj(0.0))
     pts = np.array([[0.0, 0.0, -LEN]])                       # 单点针尖（插件原生，默认）
     pmo, pg = contact.add_tip_patch(nd, pts)

@@ -1,0 +1,263 @@
+[INFO]    [runSofa] PluginRepository paths = /home/yuming/sofa/SOFA_v25.12.00_Linux/lib:/home/yuming/sofa/SOFA_v25.12.00_Linux/plugins
+[INFO]    [runSofa] DataRepository paths = /home/yuming/sofa/SOFA_v25.12.00_Linux/share/sofa:/home/yuming/sofa/SOFA_v25.12.00_Linux/share/sofa/examples:/home/yuming/sofa/SOFA_v25.12.00_Linux/share/sofa:/home/yuming/sofa/SOFA_v25.12.00_Linux/share/sofa/examples:/home/yuming/sofa/SOFA_v25.12.00_Linux/share/sofa/icons
+[INFO]    [runSofa] runSofaDataRepository paths = /home/yuming/sofa/SOFA_v25.12.00_Linux/share/sofa/gui/runSofa:/home/yuming/sofa/SOFA_v25.12.00_Linux/share/sofa/gui/runSofa
+[INFO]    [GUIManager] Registered batch as a GUI.
+[INFO]    [SofaPython3] Initializing with python version 3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]
+[INFO]    [SofaPython3] Registering a scene loader for [.py, .py3, .pyscn, .py3scn] files.
+[INFO]    [SofaPython3] Initializing python
+[INFO]    [SofaPython3] Added '/home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/SofaPython3/lib/python3/site-packages' to sys.path
+---------------------------------------
+Checking SOFA_ROOT and SOFAPYTHON3_ROOT
+Using environment variable SOFA_ROOT: /home/yuming/sofa/SOFA_v25.12.00_Linux
+---------------------------------------
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/SofaPython3/lib/libSofaPython3.so
+[INFO]    [runSofa] Loading automatically plugin list in /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/plugin_list.conf
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.Forward.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.Backward.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.ODESolver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.IO.Mesh.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.IO.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Playback.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SceneUtility.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Constant.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Dynamic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.Grid.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Container.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Mapping.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.Utility.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Topology.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Visual.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSystem.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Iterative.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Ordering.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Direct.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.Preconditioner.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.LinearSolver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mass.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Diffusion.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.Linear.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.NonLinear.so
+[DEPRECATED] [Sofa.Component.Mapping.MappedMatrix] This plugin is deprecated and will be removed in the future.
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.MappedMatrix.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Mapping.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.StateContainer.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.Spring.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.Elastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.HyperElastic.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.NonUniform.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.FEM.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.TensorMass.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.SolidMechanics.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Model.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Correction.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.Solver.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Lagrangian.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.Projective.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Constraint.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.AnimationLoop.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.MechanicalLoad.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Geometry.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.Algorithm.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.Intersection.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Detection.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.Mapper.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.Contact.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.Response.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Collision.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Setting.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Controller.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Analyze.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Generate.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Select.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.Transform.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Engine.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.Haptics.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.Component.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.GL.Component.Rendering2D.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.GL.Component.Rendering3D.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.GL.Component.Engine.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.GL.Component.Shader.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.GL.Component.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.GUI.Component.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/libSofa.GUI.Batch.so
+[INFO]    [GUIManager] Registered glfw as a GUI.
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/SofaGLFW/lib/libSofaGLFW.so
+[INFO]    [SofaPython3] Added '/home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/SofaGLFW/lib/python3/site-packages' to sys.path
+[INFO]    [GUIManager] Registered imgui as a GUI.
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/SofaImGui/lib/libSofaImGui.so
+[INFO]    [SofaPython3] Added '/home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/SofaImGui/lib/python3/site-packages' to sys.path
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/MultiThreading/lib/libMultiThreading.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/SofaViscoElastic/lib/libSofaViscoElastic.so
+[INFO]    [SofaPython3] Added '/home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/SofaViscoElastic/lib/python3/site-packages' to sys.path
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/SOFA_v25.12.00_Linux/plugins/Sofa.Metis/lib/libSofa.Metis.so
+[INFO]    [PluginManager] 72 plugins have been loaded from /home/yuming/sofa/SOFA_v25.12.00_Linux/lib/plugin_list.conf
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/needle_build/NeedleSimFixes/libNeedleSimFixes.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/reference_install/lib/libCollisionAlgorithm.so
+[INFO]    [PluginManager] Loaded plugin: /home/yuming/sofa/reference_install/lib/libConstraintGeometry.so
+[场景] 第 3 步插入导向，方案 lateral：R3 + β = 0.1，W50，单点针尖，阈值 0.22 N，耦合点间距 5 mm，总时长 22.2 s
+[INFO]    [SceneCheckerVisitor] Validating node "root" with checks: [SceneCheckCollisionResponse, SceneCheckDeprecatedComponents, SceneCheckDuplicatedName, SceneCheckEmptyNodeName, SceneCheckMapping, SceneCheckMissingRequiredPlugin, SceneCheckUsingAlias, SceneCheckMultithreading]
+[WARNING] [SceneCheckMissingRequiredPlugin] This scene is using component defined in plugins but is not importing the required plugins.  
+  Your scene may not work on a sofa environment with different pre-loaded plugins.  
+  To fix your scene and remove this warning you just need to cut & paste the following lines at the beginning of your scene:   
+  root.addObject('RequiredPlugin', name='CollisionAlgorithm') # Needed to use components [AABBBroadPhase,CollisionLoop,DistanceFilter,EdgeGeometry,InsertionAlgorithm,PointGeometry,TetrahedronGeometry,TriangleGeometry]  
+  root.addObject('RequiredPlugin', name='ConstraintGeometry') # Needed to use components [ConstraintInsertion,ConstraintUnilateral,EdgeNormalHandler,FirstDirection,PhongTriangleNormalHandler,SecondDirection]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.AnimationLoop') # Needed to use components [FreeMotionAnimationLoop]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.Constraint.Lagrangian.Correction') # Needed to use components [LinearSolverConstraintCorrection]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.Constraint.Lagrangian.Solver') # Needed to use components [BlockGaussSeidelConstraintSolver]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.Constraint.Projective') # Needed to use components [FixedProjectiveConstraint]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.LinearSolver.Direct') # Needed to use components [AsyncSparseLDLSolver]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.Mapping.Linear') # Needed to use components [IdentityMapping]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.Mapping.NonLinear') # Needed to use components [RigidMapping]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.Mass') # Needed to use components [MeshMatrixMass]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.ODESolver.Backward') # Needed to use components [EulerImplicitSolver]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.StateContainer') # Needed to use components [MechanicalObject]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.Topology.Container.Dynamic') # Needed to use components [EdgeSetTopologyContainer,TetrahedronSetTopologyContainer,TetrahedronSetTopologyModifier,TriangleSetTopologyContainer,TriangleSetTopologyModifier]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.Topology.Mapping') # Needed to use components [Tetra2TriangleTopologicalMapping]  
+  root.addObject('RequiredPlugin', name='Sofa.Component.Visual') # Needed to use components [InteractiveCamera,VisualStyle]  
+  root.addObject('RequiredPlugin', name='Sofa.GL.Component.Rendering3D') # Needed to use components [OglModel]  
+
+[INFO]    [SceneCheckerVisitor] Finished validating node "root".
+[WARNING] [InteractiveCamera(camera)] Too many missing parameters ; taking default ...
+[针] 第 20 步：压深  +0.50 mm，横向平移 0.00 mm，F = (-0.1, +0.0, +41.9) mN，耦合点 0 个
+[针] 第 40 步：压深  +1.50 mm，横向平移 0.00 mm，F = (-0.6, +0.0, +82.6) mN，耦合点 0 个
+[针] 第 60 步：压深  +2.50 mm，横向平移 0.00 mm，F = (-1.5, +0.2, +122.5) mN，耦合点 0 个
+[针] 第 80 步：压深  +3.50 mm，横向平移 0.00 mm，F = (-2.9, +0.5, +162.0) mN，耦合点 0 个
+[针] 第 100 步：压深  +4.50 mm，横向平移 0.00 mm，F = (-5.1, +1.0, +200.9) mN，耦合点 0 个
+[状态] 第 112 步：刺穿 → 插入状态
+[针] 第 120 步：压深  +5.50 mm，横向平移 0.00 mm，F = (+1.5, -9.2, +0.0) mN，耦合点 1 个
+[针] 第 140 步：压深  +6.50 mm，横向平移 0.00 mm，F = (+0.5, -6.6, +0.0) mN，耦合点 2 个
+[针] 第 160 步：压深  +7.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 2 个
+[针] 第 180 步：压深  +8.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 2 个
+[针] 第 200 步：压深  +9.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 2 个
+[针] 第 220 步：压深 +10.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 240 步：压深 +11.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 260 步：压深 +12.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 280 步：压深 +13.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 300 步：压深 +14.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 320 步：压深 +15.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 340 步：压深 +16.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 360 步：压深 +17.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 380 步：压深 +18.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 400 步：压深 +19.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 420 步：压深 +20.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[针] 第 440 步：压深 +21.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[针] 第 460 步：压深 +22.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[针] 第 480 步：压深 +23.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[流畅度] 前 500 帧（去掉前 20 帧）：计算 平均 12.62 / 中位数 12.69 / p95 15.98 / 最大 17.51 ms；帧时间 平均 16.32 / 中位数 16.46 / p95 20.51 / 最大 30.05 ms；帧率 61.3 帧/秒；超过 33 ms 的帧 0.0%，超过 100 ms 的帧 0.00%
+[针] 第 500 步：压深 +24.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[针] 第 520 步：压深 +25.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 540 步：压深 +26.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 560 步：压深 +27.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 580 步：压深 +28.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 600 步：压深 +29.50 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 620 步：压深 +30.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 640 步：压深 +30.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 660 步：压深 +30.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 680 步：压深 +30.00 mm，横向平移 0.20 mm，F = (-23.9, -6.8, +0.0) mN，耦合点 6 个
+[针] 第 700 步：压深 +30.00 mm，横向平移 0.40 mm，F = (-40.2, -6.9, +0.0) mN，耦合点 6 个
+[针] 第 720 步：压深 +30.00 mm，横向平移 0.60 mm，F = (-56.5, -7.1, +0.0) mN，耦合点 6 个
+[针] 第 740 步：压深 +30.00 mm，横向平移 0.80 mm，F = (-72.8, -7.3, +0.0) mN，耦合点 6 个
+[针] 第 760 步：压深 +30.00 mm，横向平移 1.00 mm，F = (-89.1, -7.4, +0.0) mN，耦合点 6 个
+[针] 第 780 步：压深 +30.00 mm，横向平移 1.20 mm，F = (-105.4, -7.6, +0.0) mN，耦合点 6 个
+[针] 第 800 步：压深 +30.00 mm，横向平移 1.40 mm，F = (-121.7, -7.8, +0.0) mN，耦合点 6 个
+[针] 第 820 步：压深 +30.00 mm，横向平移 1.60 mm，F = (-137.9, -7.9, +0.0) mN，耦合点 6 个
+[针] 第 840 步：压深 +30.00 mm，横向平移 1.80 mm，F = (-154.2, -8.1, +0.0) mN，耦合点 6 个
+[针] 第 860 步：压深 +30.00 mm，横向平移 2.00 mm，F = (-170.5, -8.3, +0.0) mN，耦合点 6 个
+[针] 第 880 步：压深 +30.00 mm，横向平移 2.20 mm，F = (-186.8, -8.4, +0.0) mN，耦合点 6 个
+[针] 第 900 步：压深 +30.00 mm，横向平移 2.40 mm，F = (-203.1, -8.6, +0.0) mN，耦合点 6 个
+[针] 第 920 步：压深 +30.00 mm，横向平移 2.60 mm，F = (-219.4, -8.7, +0.0) mN，耦合点 6 个
+[针] 第 940 步：压深 +30.00 mm，横向平移 2.80 mm，F = (-235.7, -8.9, +0.0) mN，耦合点 6 个
+[针] 第 960 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-252.0, -9.1, +0.0) mN，耦合点 6 个
+[针] 第 980 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[流畅度] 前 1000 帧（去掉前 20 帧）：计算 平均 14.74 / 中位数 15.38 / p95 18.01 / 最大 23.32 ms；帧时间 平均 18.54 / 中位数 19.07 / p95 23.00 / 最大 30.06 ms；帧率 53.9 帧/秒；超过 33 ms 的帧 0.0%，超过 100 ms 的帧 0.00%
+[针] 第 1000 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[针] 第 1020 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[针] 第 1040 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[针] 第 1060 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[针] 第 1080 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[针] 第 1100 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[针] 第 1120 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[针] 第 1140 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[针] 第 1160 步：压深 +30.00 mm，横向平移 3.00 mm，F = (-243.8, -9.0, +0.0) mN，耦合点 6 个
+[针] 第 1180 步：压深 +30.00 mm，横向平移 2.80 mm，F = (-219.4, -8.7, +0.0) mN，耦合点 6 个
+[针] 第 1200 步：压深 +30.00 mm，横向平移 2.60 mm，F = (-203.1, -8.6, +0.0) mN，耦合点 6 个
+[针] 第 1220 步：压深 +30.00 mm，横向平移 2.40 mm，F = (-186.8, -8.4, +0.0) mN，耦合点 6 个
+[针] 第 1240 步：压深 +30.00 mm，横向平移 2.20 mm，F = (-170.5, -8.3, +0.0) mN，耦合点 6 个
+[针] 第 1260 步：压深 +30.00 mm，横向平移 2.00 mm，F = (-154.2, -8.1, +0.0) mN，耦合点 6 个
+[针] 第 1280 步：压深 +30.00 mm，横向平移 1.80 mm，F = (-137.9, -7.9, +0.0) mN，耦合点 6 个
+[针] 第 1300 步：压深 +30.00 mm，横向平移 1.60 mm，F = (-121.7, -7.8, +0.0) mN，耦合点 6 个
+[针] 第 1320 步：压深 +30.00 mm，横向平移 1.40 mm，F = (-105.4, -7.6, +0.0) mN，耦合点 6 个
+[针] 第 1340 步：压深 +30.00 mm，横向平移 1.20 mm，F = (-89.1, -7.4, +0.0) mN，耦合点 6 个
+[针] 第 1360 步：压深 +30.00 mm，横向平移 1.00 mm，F = (-72.8, -7.3, +0.0) mN，耦合点 6 个
+[针] 第 1380 步：压深 +30.00 mm，横向平移 0.80 mm，F = (-56.5, -7.1, +0.0) mN，耦合点 6 个
+[针] 第 1400 步：压深 +30.00 mm，横向平移 0.60 mm，F = (-40.2, -6.9, +0.0) mN，耦合点 6 个
+[针] 第 1420 步：压深 +30.00 mm，横向平移 0.40 mm，F = (-23.9, -6.8, +0.0) mN，耦合点 6 个
+[针] 第 1440 步：压深 +30.00 mm，横向平移 0.20 mm，F = (-7.6, -6.6, +0.0) mN，耦合点 6 个
+[针] 第 1460 步：压深 +30.00 mm，横向平移 0.00 mm，F = (+8.6, -6.4, +0.0) mN，耦合点 6 个
+[针] 第 1480 步：压深 +30.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[流畅度] 前 1500 帧（去掉前 20 帧）：计算 平均 15.48 / 中位数 16.25 / p95 18.30 / 最大 23.32 ms；帧时间 平均 19.42 / 中位数 19.84 / p95 24.31 / 最大 32.93 ms；帧率 51.5 帧/秒；超过 33 ms 的帧 0.0%，超过 100 ms 的帧 0.00%
+[针] 第 1500 步：压深 +30.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 1520 步：压深 +30.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 1540 步：压深 +30.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 1560 步：压深 +30.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 1580 步：压深 +29.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 1600 步：压深 +28.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 1620 步：压深 +27.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 1640 步：压深 +26.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 6 个
+[针] 第 1660 步：压深 +25.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[针] 第 1680 步：压深 +24.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[针] 第 1700 步：压深 +23.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[针] 第 1720 步：压深 +22.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[针] 第 1740 步：压深 +21.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 5 个
+[针] 第 1760 步：压深 +20.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 1780 步：压深 +19.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 1800 步：压深 +18.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 1820 步：压深 +17.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 1840 步：压深 +16.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 4 个
+[针] 第 1860 步：压深 +15.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 1880 步：压深 +14.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 1900 步：压深 +13.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 1920 步：压深 +12.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 1940 步：压深 +11.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 3 个
+[针] 第 1960 步：压深 +10.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 2 个
+[针] 第 1980 步：压深  +9.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 2 个
+[流畅度] 前 2000 帧（去掉前 20 帧）：计算 平均 15.32 / 中位数 15.99 / p95 18.21 / 最大 23.32 ms；帧时间 平均 19.27 / 中位数 19.50 / p95 24.16 / 最大 35.33 ms；帧率 51.9 帧/秒；超过 33 ms 的帧 0.1%，超过 100 ms 的帧 0.00%
+[针] 第 2000 步：压深  +8.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 2 个
+[针] 第 2020 步：压深  +7.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 2 个
+[针] 第 2040 步：压深  +6.00 mm，横向平移 0.00 mm，F = (+0.5, -6.5, +0.0) mN，耦合点 2 个
+[针] 第 2060 步：压深  +5.00 mm，横向平移 0.00 mm，F = (+2.4, -10.3, +0.0) mN，耦合点 1 个
+[针] 第 2080 步：压深  +4.00 mm，横向平移 0.00 mm，F = (+1.9, -9.3, +0.0) mN，耦合点 1 个
+[针] 第 2100 步：压深  +3.00 mm，横向平移 0.00 mm，F = (+1.9, -9.3, +0.0) mN，耦合点 1 个
+[针] 第 2120 步：压深  +2.00 mm，横向平移 0.00 mm，F = (+1.9, -9.3, +0.0) mN，耦合点 1 个
+[针] 第 2140 步：压深  +1.00 mm，横向平移 0.00 mm，F = (+1.9, -9.3, +0.0) mN，耦合点 1 个
+[状态] 第 2160 步：耦合点已全部删除 → 回到刺穿前状态
+[针] 第 2160 步：压深  -0.00 mm，横向平移 0.00 mm，F = (+0.0, +0.0, +0.0) mN，耦合点 0 个
+[针] 第 2180 步：压深  -0.50 mm，横向平移 0.00 mm，F = (+0.0, +0.0, +0.0) mN，耦合点 0 个
+[针] 第 2200 步：压深  -0.50 mm，横向平移 0.00 mm，F = (+0.0, +0.0, +0.0) mN，耦合点 0 个
+[针] 第 2220 步：压深  -0.50 mm，横向平移 0.00 mm，F = (+0.0, +0.0, +0.0) mN，耦合点 0 个
+[针] 第 2240 步：压深  -0.50 mm，横向平移 0.00 mm，F = (+0.0, +0.0, +0.0) mN，耦合点 0 个
+[针] 第 2260 步：压深  -0.50 mm，横向平移 0.00 mm，F = (+0.0, +0.0, +0.0) mN，耦合点 0 个
+[针] 第 2280 步：压深  -0.50 mm，横向平移 0.00 mm，F = (+0.0, +0.0, +0.0) mN，耦合点 0 个
+
+########## SIG 15 - SIGTERM: a termination request was sent to the program ##########
+  sofa::helper::BackTrace::sig(int)
+  __cxa_demangle
+  sofa::helper::NameDecoder::decodeFullName[abi:cxx11](std::type_info const&)
+  sofa::helper::NameDecoder::decodeTypeName[abi:cxx11](std::type_info const&)
+  sofa::defaulttype::DataTypeInfoDynamicWrapper<sofa::defaulttype::DataTypeInfo<sofa::linearalgebra::CompressedRowSparseMatrixConstraint<sofa::type::Vec<3u, double>, sofa::linearalgebra::CRSConstraintPolicy>, void> >::name[abi:cxx11]() const
+  sofapython3::PythonFactory::toPython(sofa::core::objectmodel::BaseData*)
+  _PyObject_MakeTpCall
+  PyObject_CallOneArg
+  PyObject_GetAttr
+  _PyEval_EvalFrameDefault
+  sofapython3::PythonEnvironment::executePython(sofa::core::objectmodel::Base const*, std::function<void ()>)
+  sofa::simulation::PropagateEventVisitor::processNodeTopDown(sofa::simulation::Node*)
+  sofa::simulation::Node::executeVisitorTopDown(sofa::simulation::Visitor*, std::__cxx11::list<sofa::simulation::Node*, std::allocator<sofa::simulation::Node*> >&, std::map<sofa::simulation::Node*, sofa::simulation::Node::StatusStruct, std::less<sofa::simulation::Node*>, std::allocator<std::pair<sofa::simulation::Node* const, sofa::simulation::Node::StatusStruct> > >&, sofa::simulation::Node*)
+  sofa::simulation::Node::doExecuteVisitor(sofa::simulation::Visitor*, bool)
+  sofa::component::animationloop::FreeMotionAnimationLoop::step(sofa::core::ExecParams const*, double)
+  sofa::simulation::node::animate(sofa::simulation::Node*, double)
+  sofaglfw::SofaGLFWBaseGUI::runStep()
+  sofaglfw::SofaGLFWBaseGUI::runLoop(unsigned long)
+  sofaglfw::SofaGLFWGUI::mainLoop()
+  sofa::gui::common::GUIManager::MainLoop(boost::intrusive_ptr<sofa::simulation::Node>, char const*)
+  __libc_start_main
